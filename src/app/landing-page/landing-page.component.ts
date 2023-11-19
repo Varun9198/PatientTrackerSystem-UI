@@ -10,8 +10,12 @@ export class LandingPageComponent {
 
   constructor(private router: Router) {}
 
-  redirectToComponent1() {
+  redirectToDoctorLogin() {
     this.router.navigate(['/DoctorLogin']);
+  }
+
+  redirectToPatientLogin() {
+    this.router.navigate(['/PatientLogin']);
   }
 
 }
