@@ -5,7 +5,7 @@ import {LoginDoctorComponent} from './login-doctor/login-doctor.component'
 
 const routes: Routes = [
   {path: '', component: LandingPageComponent},
-  {path: '', component: LoginDoctorComponent}
+  {path: 'DoctorLogin', component: LoginDoctorComponent}
 ]
 
 @NgModule({
