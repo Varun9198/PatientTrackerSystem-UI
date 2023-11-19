@@ -1,10 +1,19 @@
 <!-- [formGroup]="form" -->
-<div id="container">
+<div id="container" [formGroup]="form">
     <h1>Login</h1>
+    <form>
 
-    <input type="text" formControlName="username" placeholder="Username" />
-    <input type="password" formControlName="password" placeholder="password"/>
-
+    </form>
+    <div>
+        <label>Username</label><br>
+        <input type="text" formControlName="username" placeholder="Username" />
+    </div>
+    <pre></pre>
+    <div>
+        <label>Password</label><br>
+        <input type="password" formControlName="password" placeholder="password"/>
+    </div>
+    <pre></pre>
     <button class="button" (click)="login()" [disabled]="!form.valid">Login</button>
 
     <!-- To check whether everything is being displayed correctly -->
