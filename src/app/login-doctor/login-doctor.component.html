@@ -1,19 +1,21 @@
-<div class="container" [formGroup]="form">
-    <h1>PATIENT TRACKER SYSTEM</h1>
-    <div class="doc-username">
-        <input id="username" type="text" formControlName="username" placeholder="Username" />
+<body>
+    <div class="container" [formGroup]="form">
+        <h1>Doctor Login/Sign Up</h1>
+        <div class="doc-username">
+            <input id="username" type="text" formControlName="username" placeholder="Username" />
+        </div>
+        <pre></pre>
+        <div class="doc-password">
+            <input id="password" type="password" formControlName="password" placeholder="Password"/>
+        </div>
+        <pre></pre>
+        <div class="options">
+            <input type="radio" name="action" value="login" id="login">
+            <label for="login">Login</label>
+            <input type="radio" name="action" value="signup" id="signup">
+            <label for="signup">Sign Up</label>
+        </div>
+        <pre></pre>
+        <button class="button" (click)="login()" [disabled]="!form.valid">Submit</button>
     </div>
-    <pre></pre>
-    <div class="doc-password">
-        <input id="password" type="password" formControlName="password" placeholder="Password"/>
-    </div>
-    <pre></pre>
-    <div class="options">
-        <label for="login">Login</label>
-        <input type="radio" name="action" id="login">
-        <label for="signup">Sign Up</label>
-        <input type="radio" name="action" id="signup">
-    </div>
-    <pre></pre>
-    <button class="button" (click)="login()" [disabled]="!form.valid">Submit</button>
-</div>
+</body>

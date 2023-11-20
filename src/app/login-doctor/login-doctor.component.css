@@ -1,3 +1,11 @@
+body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
 .container {
   text-align: center;
   padding: 20px;
@@ -12,7 +20,7 @@
 }
 
 h1 {
-  font-family: 'Arial', sans-serif;
+  /* font-family: 'Arial', sans-serif; */
   font-size: 24px;
   margin-bottom: 50px;
   letter-spacing: 2px;
@@ -57,16 +65,26 @@ button:disabled {
 }
 
 .options label {
-  margin-right: 10px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 4px;
+  border-color: #333;
   font-size: 16px;
   color: #333;
+  background-color: white;
+  cursor: pointer;
 }
 
 /* Styles for the radio buttons */
 .options input[type="radio"] {
-  margin: 5px;
+  visibility: hidden;
 }
 
+input:checked + label{
+  color: white;
+  border-color: white;
+  background-color: blue;
+}
 /* Hover effect for the buttons */
 button:hover {
   background-color: #218c54; /* Darker green on hover */
