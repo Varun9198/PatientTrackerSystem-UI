@@ -8,5 +8,12 @@
         <input id="password" type="password" formControlName="password" placeholder="Password"/>
     </div>
     <pre></pre>
-    <button class="button" (click)="login()" [disabled]="!form.valid">Login</button>
+    <div class="options">
+        <label for="login">Login</label>
+        <input type="radio" id="login">
+        <label for="signup">Sign Up</label>
+        <input type="radio" id="signup">
+    </div>
+    <pre></pre>
+    <button class="button" (click)="login()" [disabled]="!form.valid">Submit</button>
 </div>
