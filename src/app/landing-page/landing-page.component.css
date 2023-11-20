@@ -1,0 +1,51 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+  }
+
+.container {
+    text-align: center;
+    margin: 50px auto;
+  }
+  
+  h1 {
+    color: #333;
+  }
+  
+  .images {
+    margin-top: 20px;
+  }
+  
+  .images img {
+    margin: 0 10px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    margin-top: 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-out 0s;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .doc {
+    background-color: #3498db; /* Blue color for Doctor Login button */
+    color: #fff;
+    margin-right: 50px;
+  }
+  
+  .pat {
+    background-color: #e74c3c; /* Red color for Patient Login button */
+    color: #fff;
+  }
+  
+  button:hover {
+    background-color: #333;
+  }

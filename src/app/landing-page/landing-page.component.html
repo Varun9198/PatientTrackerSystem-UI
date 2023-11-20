@@ -1,5 +1,12 @@
-<div>
-    <h1>Landing Page</h1>
-    <button (click)="redirectToDoctorLogin()">Go to Doctor Login</button>
-    <button (click)="redirectToPatientLogin()">Go to Patient Login</button>
+<body>
+<div class="container">
+    <h1>Patient Tracking System</h1>
+    <div class="images">
+      <img src="../../assets/images/pulse.png" height="50" width="50">
+      <img src="../../assets/images/hospital.png" height="50" width="50">
+      <img src="../../assets/images/stethoscope.png" height="50" width="50">
+    </div>
+    <button class = "doc" (click)="redirectToDoctorLogin()">Go to Doctor Login</button>
+    <button class = "pat" (click)="redirectToPatientLogin()">Go to Patient Login</button>
   </div>
+</body>
