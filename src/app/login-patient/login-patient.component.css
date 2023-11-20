@@ -26,8 +26,14 @@ h1 {
   letter-spacing: 2px;
 }
 
-.doc-username,
-.doc-password,
+.pat-username {
+  margin-bottom: -5px;
+}
+
+.pat-password {
+  margin-bottom: 15px;
+}
+
 .options {
   margin-bottom: 20px;
 }
@@ -46,7 +52,7 @@ button {
   padding: 12px 24px;
   border: none;
   border-radius: 4px;
-  background-color: #27ae60; /* Medical-appropriate green color */
+  background-color: #ccc; /* Medical-appropriate green color */
   color: #333;
   cursor: pointer;
   font-size: 16px;
@@ -64,27 +70,6 @@ button:disabled {
   justify-content: center; /* Center the items horizontally */
 }
 
-.options label {
-  padding: 12px 24px;
-  border: none;
-  border-radius: 4px;
-  border-color: #333;
-  font-size: 16px;
-  color: #333;
-  background-color: white;
-  cursor: pointer;
-}
-
-/* Styles for the radio buttons */
-.options input[type="radio"] {
-  visibility: hidden;
-}
-
-input:checked + label{
-  color: white;
-  border-color: white;
-  background-color: blue;
-}
 /* Hover effect for the buttons */
 button:hover {
   background-color: #218c54; /* Darker green on hover */
