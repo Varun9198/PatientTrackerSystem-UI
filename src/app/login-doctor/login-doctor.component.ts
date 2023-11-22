@@ -21,11 +21,7 @@ export class LoginDoctorComponent {
     let password = this.form.value.password; 
   }
 
-  forgotPassword(){
-    this.router.navigate(['/DoctorLogin']);
-  }
-
   signup(){
-    this.router.navigate(['/DoctorLogin/Signup'])
+    this.router.navigate(['DoctorLogin/Signup'])
   }
 }

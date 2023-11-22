@@ -5,13 +5,16 @@ import {LoginDoctorComponent} from './login-doctor/login-doctor.component'
 import { LoginPatientComponent } from "./login-patient/login-patient.component";
 import { SignupDoctorComponent } from './signup-doctor/signup-doctor.component';
 import { SignupPatientComponent } from './signup-patient/signup-patient.component';
+import { ForgotPassComponent } from './forgot-pass/forgot-pass.component';
 
 const routes: Routes = [
   {path: '', component: LandingPageComponent},
   {path: 'DoctorLogin', component: LoginDoctorComponent},
-  {path: 'PatientLogin', component: LoginPatientComponent},
+  {path: 'PatientLogin', component: LoginPatientComponent, },
   {path: 'DoctorLogin/Signup', component: SignupDoctorComponent},
-  {path: 'PatientLogin/Signup', component: SignupPatientComponent}
+  {path: 'PatientLogin/Signup', component: SignupPatientComponent},
+  {path: 'DoctorLogin/ForgotPassword', component: ForgotPassComponent},
+  {path: 'PatientLogin/ForgotPassword', component: ForgotPassComponent}
 ]
 
 @NgModule({
