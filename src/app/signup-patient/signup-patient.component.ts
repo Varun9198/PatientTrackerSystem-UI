@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from "@angular/router";
 
 @Component({
+  standalone: true,
   selector: 'app-signup-patient',
   templateUrl: './signup-patient.component.html',
-  styleUrls: ['./signup-patient.component.css']
+  styleUrls: ['./signup-patient.component.css'],
+  imports: [ReactiveFormsModule]
 })
 export class SignupPatientComponent {
 

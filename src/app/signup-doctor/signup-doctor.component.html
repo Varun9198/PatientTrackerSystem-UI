@@ -1,49 +1,48 @@
-<div>
+<div [formGroup]="form">
     <h3>Enter Personal Details</h3> 
     
     <div class="username">
-        <input placeholder="Username" type="text">
+        <input placeholder="Username" type="text" formControlName="username">
     </div>
     <br>
     
     <div class="password">
-        <!-- <label for="password">Password</label> -->
-        <input placeholder="Password" type="password">
+        <input placeholder="Password" type="password" formControlName="password">
     </div>
     <br>
 
     <div class="name">
-        <input placeholder="Name" type="text" >
+        <input placeholder="Name" type="text" formControlName="name">
     </div>
     <br>
 
     <div class="dob">
-        <input placeholder="DOB" type="date" >
+        <input placeholder="DOB" type="date" formControlName="dob">
     </div>
     <br>
     
     <div class="hospital">
-        <input placeholder="Hospital" type="text" >
+        <input placeholder="Hospital" type="text" formControlName="hospital">
     </div>
     <br>
 
     <div class="speciality">
-        <input placeholder="Speciality" type="text" > 
+        <input placeholder="Speciality" type="text" formControlName="speciality"> 
     </div>
     <br>
     
     <div class="address">
-        <input placeholder="Address" type="text" > 
+        <input placeholder="Address" type="text" formControlName="address"> 
     </div>
     <br>
     
     <div class="phone-number">
-        <input placeholder="123-456-7890" type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" > 
+        <input placeholder="123-456-7890" type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" formControlName="phone_number"> 
     </div>
     <br>
 
     <div class="email">
-        <input placeholder="abc@xyz.com" type="email" > 
+        <input placeholder="abc@xyz.com" type="email" formControlName="email"> 
     </div>
     <br>
 
