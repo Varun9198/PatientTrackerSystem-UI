@@ -19,6 +19,7 @@ export class LoginDoctorComponent {
   login(){
     let username = this.form.value.username;
     let password = this.form.value.password; 
+    this.router.navigate(['DoctorLogin/Dashboard']);
   }
 
   signup(){

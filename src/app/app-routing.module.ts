@@ -9,14 +9,14 @@ import { ForgotPassComponent } from './forgot-pass/forgot-pass.component';
 import { DoctorDashboardComponent } from './doctor-dashboard/doctor-dashboard.component';
 
 const routes: Routes = [
-  // {path: '', component: LandingPageComponent},
-  {path: '', component: DoctorDashboardComponent},
+  {path: '', component: LandingPageComponent},
   {path: 'DoctorLogin', component: LoginDoctorComponent},
   {path: 'PatientLogin', component: LoginPatientComponent, },
   {path: 'DoctorLogin/Signup', component: SignupDoctorComponent},
   {path: 'PatientLogin/Signup', component: SignupPatientComponent},
   {path: 'DoctorLogin/ForgotPassword', component: ForgotPassComponent},
-  {path: 'PatientLogin/ForgotPassword', component: ForgotPassComponent}
+  {path: 'PatientLogin/ForgotPassword', component: ForgotPassComponent},
+  {path: 'DoctorLogin/Dashboard', component: DoctorDashboardComponent},
 ]
 
 @NgModule({
