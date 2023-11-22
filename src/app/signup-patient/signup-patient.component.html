@@ -47,5 +47,5 @@
     </div>
     <br>
 
-    <button type="button" (click)="signup()">Sign Up</button>
+    <button type="button" (click)="signup()" [disabled]="!form.valid">Sign Up</button>
 </div>
