@@ -20,6 +20,10 @@ export class LoginPatientComponent {
     let password = this.form.value.password;
   }
 
+  signup(){
+    this.router.navigate(['PatientLogin/Signup'])
+  }
+
   forgotPassword(){
     this.router.navigate(['/ForgotPassword'])
   }
