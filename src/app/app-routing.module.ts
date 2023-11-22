@@ -8,9 +8,11 @@ import { SignupPatientComponent } from './signup-patient/signup-patient.componen
 import { ForgotPassComponent } from './forgot-pass/forgot-pass.component';
 import { DoctorDashboardComponent } from './doctor-dashboard/doctor-dashboard.component';
 import { DoctorCaseHistoryComponent } from './doctor-case-history/doctor-case-history.component';
+import { DoctorProfileComponent } from './doctor-profile/doctor-profile.component';
 
 const routes: Routes = [
-  {path: '', component: LandingPageComponent},
+  // {path: '', component: LandingPageComponent},
+  {path: '', component: DoctorProfileComponent},
   {path: 'DoctorLogin', component: LoginDoctorComponent},
   {path: 'PatientLogin', component: LoginPatientComponent, },
   {path: 'DoctorLogin/Signup', component: SignupDoctorComponent},
