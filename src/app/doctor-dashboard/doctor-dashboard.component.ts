@@ -18,7 +18,5 @@ interface CASES{
 })
 export class DoctorDashboardComponent {
   Cases: CASES[] = UsersJson;
-  constructor(){
-    console.log(this.Cases);
-  }
+  constructor(){}
 }

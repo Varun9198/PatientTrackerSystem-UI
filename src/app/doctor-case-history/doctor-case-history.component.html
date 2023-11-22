@@ -4,7 +4,7 @@
             <img id ="dash-img" src="../../assets/images/doctor-dashboard-icon.png">
         </div>
         <div class = "dashboard-heading">
-            <h2> Dashboard </h2>
+            <h2> Case History </h2>
         </div>
         <div class="dashboard-logout">
             <a  href="DoctorLogin">Log Out</a> 
@@ -17,8 +17,8 @@
             <a href="">Upcoming Appointments</a><br>
             <a href="DoctorLogin/CaseHistory">Case History</a><br> 
         </div>
+
         <div class="appointment-cases">
-            <h2>Today's Appointment</h2>
             <div class="div-table">
             <table class="table">
                 <thead>
@@ -39,27 +39,6 @@
                 </tbody>
               </table>
               </div>
-            <h2>Open Cases</h2>
-            <div class="div-table">
-            <table class="table">
-                <thead>
-                    <tr>
-                      <th>Id</th>
-                      <th>Name</th>
-                      <th>Username</th>
-                      <th>Email</th>
-                    </tr>
-                </thead>
-                <tbody>
-                  <tr *ngFor="let user of Cases">
-                    <td>{{ user.id }}</td>
-                    <td>{{ user.name }}</td>
-                    <td>{{ user.username }}</td>
-                    <td>{{ user.email }}</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
         </div>
     </div>
 </body>
