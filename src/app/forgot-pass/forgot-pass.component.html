@@ -1,12 +1,14 @@
-<div>
-    <input type="text" name="Username" placeholder="Enter Username"> <br>
-    <input type="password" name="password" placeholder="Enter new password"> <br>
-    <input type="password" name="confirm-pass" placeholder="Enter new password again"> <br>
+<body>
+<div [formGroup]="form">
+    <input type="text" name="username" placeholder="Enter Username" formControlName="username"> <br>
+    <input type="password" name="password" placeholder="Enter new password" formControlName="password"> <br>
+    <input type="password" name="confirm_pass" placeholder="Enter new password again" formControlName="confirm_pass"> <br>
 </div>
 <div>
     <label for="doctor">Doctor</label>
-    <input type="radio" name="action">
+    <input type="radio" name="action" checked>
     <label for="patient">Patient</label>
     <input type="radio" name="action">
 </div>
-<button type="button">Change Password</button>
+<button type="button" (click)="redirect()" [disabled]="!form.valid">Change Password</button>
+</body>
