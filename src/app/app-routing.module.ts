@@ -6,10 +6,10 @@ import { LoginPatientComponent } from "./login-patient/login-patient.component";
 import { SignupDoctorComponent } from './signup-doctor/signup-doctor.component';
 
 const routes: Routes = [
-  // {path: '', component: LandingPageComponent},
-  {path: '', component: SignupDoctorComponent},
+  {path: '', component: LandingPageComponent},
   {path: 'DoctorLogin', component: LoginDoctorComponent},
-  {path: 'PatientLogin', component: LoginPatientComponent}
+  {path: 'PatientLogin', component: LoginPatientComponent},
+  {path: 'DoctorLogin/Signup', component: SignupDoctorComponent}
 ]
 
 @NgModule({

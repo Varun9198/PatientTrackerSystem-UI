@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-signup-doctor',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./signup-doctor.component.css']
 })
 export class SignupDoctorComponent {
-  signup(){}
+  constructor(private router: Router){}
+  signup(){
+    alert('Account Created');
+    this.router.navigateByUrl('DoctorLogin')
+  }
 }

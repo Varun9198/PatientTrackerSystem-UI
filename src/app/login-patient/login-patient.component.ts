@@ -21,6 +21,6 @@ export class LoginPatientComponent {
   }
 
   forgotPassword(){
-    this.router.navigate(['/DoctorLogin']);
+    this.router.navigate(['/ForgotPassword'])
   }
 }

@@ -18,10 +18,14 @@ export class LoginDoctorComponent {
   constructor(private fb: FormBuilder, private router: Router) {}
   login(){
     let username = this.form.value.username;
-    let password = this.form.value.password;
+    let password = this.form.value.password; 
   }
 
   forgotPassword(){
     this.router.navigate(['/DoctorLogin']);
+  }
+
+  signup(){
+    this.router.navigate(['/DoctorLogin/Signup'])
   }
 }
