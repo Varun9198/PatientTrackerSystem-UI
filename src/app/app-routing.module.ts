@@ -9,6 +9,7 @@ import { ForgotPassComponent } from './forgot-pass/forgot-pass.component';
 import { DoctorDashboardComponent } from './doctor-dashboard/doctor-dashboard.component';
 import { DoctorCaseHistoryComponent } from './doctor-case-history/doctor-case-history.component';
 import { DoctorProfileComponent } from './doctor-profile/doctor-profile.component';
+import { DoctorUpcomingAppComponent } from './doctor-upcoming-app/doctor-upcoming-app.component';
 
 const routes: Routes = [
   {path: '', component: LandingPageComponent},
@@ -21,6 +22,7 @@ const routes: Routes = [
   {path: 'DoctorLogin/Dashboard', component: DoctorDashboardComponent},
   {path: 'DoctorLogin/CaseHistory', component: DoctorCaseHistoryComponent},
   {path: 'DoctorLogin/Profile', component: DoctorProfileComponent},
+  {path: 'DoctorLogin/UpcomingAppointments', component: DoctorUpcomingAppComponent}
 ]
 
 @NgModule({
