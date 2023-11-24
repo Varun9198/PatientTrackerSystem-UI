@@ -1,0 +1,21 @@
+<body>
+    <div class="container" [formGroup]="form">
+        <h1>Doctor Login/Sign Up</h1>
+        <div class="doc-username">
+            <input id="username" type="text" formControlName="username" placeholder="Username" />
+        </div>
+        <pre></pre>
+        <div class="doc-password">
+            <input id="password" type="password" formControlName="password" placeholder="Password"/>
+        </div>
+        <div class="forgot-password">
+            <a href="#" (click)="forgotPassword()">Forgot Password?</a>
+        </div>
+        <pre></pre>
+        <div class="options">
+            <button class="signup" (click)="login()">Sign Up</button>
+            <button class="login" (click)="login()" [disabled]="!form.valid">Login</button>
+        </div>
+        <pre></pre>
+    </div>
+</body>
