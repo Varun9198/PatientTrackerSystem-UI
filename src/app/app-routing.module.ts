@@ -11,6 +11,7 @@ import { DoctorCaseHistoryComponent } from './doctor-case-history/doctor-case-hi
 import { DoctorProfileComponent } from './doctor-profile/doctor-profile.component';
 import { DoctorUpcomingAppComponent } from './doctor-upcoming-app/doctor-upcoming-app.component';
 import { DoctorRescheduleComponent } from './doctor-reschedule/doctor-reschedule.component';
+import { DoctorEditComponent } from './doctor-edit/doctor-edit.component';
 
 const routes: Routes = [
   {path: '', component: LandingPageComponent},
@@ -25,6 +26,7 @@ const routes: Routes = [
   {path: 'DoctorLogin/Profile', component: DoctorProfileComponent},
   {path: 'DoctorLogin/UpcomingAppointments', component: DoctorUpcomingAppComponent},
   {path: 'DoctorLogin/Reschedule', component: DoctorRescheduleComponent},
+  {path: 'DoctorLogin/Edit', component: DoctorEditComponent},
 ]
 
 @NgModule({

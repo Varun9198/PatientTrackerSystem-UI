@@ -27,6 +27,6 @@ export class DoctorProfileComponent {
   phone_number = '123-456-7891';
   constructor(private router: Router){}
   edit(){
-    this.router.navigate(['DoctorLogin']);
+    this.router.navigate(['DoctorLogin/Edit']);
   }
 }
