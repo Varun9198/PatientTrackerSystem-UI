@@ -11,8 +11,7 @@ import { DoctorCaseHistoryComponent } from './doctor-case-history/doctor-case-hi
 import { DoctorProfileComponent } from './doctor-profile/doctor-profile.component';
 
 const routes: Routes = [
-  // {path: '', component: LandingPageComponent},
-  {path: '', component: DoctorProfileComponent},
+  {path: '', component: LandingPageComponent},
   {path: 'DoctorLogin', component: LoginDoctorComponent},
   {path: 'PatientLogin', component: LoginPatientComponent, },
   {path: 'DoctorLogin/Signup', component: SignupDoctorComponent},
@@ -21,6 +20,7 @@ const routes: Routes = [
   {path: 'PatientLogin/ForgotPassword', component: ForgotPassComponent},
   {path: 'DoctorLogin/Dashboard', component: DoctorDashboardComponent},
   {path: 'DoctorLogin/CaseHistory', component: DoctorCaseHistoryComponent},
+  {path: 'DoctorLogin/Profile', component: DoctorProfileComponent},
 ]
 
 @NgModule({
