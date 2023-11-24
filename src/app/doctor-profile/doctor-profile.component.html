@@ -16,13 +16,45 @@
             <a href="DoctorLogin/Dashboard">Dashboard</a><br>
             <a href="">Upcoming Appointments</a><br>
             <a href="DoctorLogin/CaseHistory">Case History</a><br> 
+            <a href="">Reschedule Appointment</a><br> 
         </div>
         <div class="container">
             <div class="div-image">
                 <img src="../../assets/images/doctor-profile-icon.png" height="200px" weight="200px" class="in-image">
             </div>
             <div class="div-details">
-                Print details
+                <div class="name">
+                    <input [value]="name" type="text" formControlName="name" readonly>
+                </div>
+                <br>
+            
+                <div class="dob">
+                    <input [value]="dob" type="date" formControlName="dob" readonly>
+                </div> 
+                <!-- Parsed value is always of the form YYYY-MM-DD -->
+                <br>
+                
+                <div class="hospital">
+                    <input [value]="hospital" type="text" formControlName="hospital" readonly>
+                </div>
+                <br>
+            
+                <div class="speciality">
+                    <input [value]="speciality" type="text" formControlName="speciality" readonly> 
+                </div>
+                <br>
+                
+                <div class="address">
+                    <input [value]="address" type="text" formControlName="address" readonly> 
+                </div>
+                <br>
+                
+                <div class="phone-number">
+                    <input [value]="phone_number" type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" formControlName="phone_number" readonly> 
+                </div>
+                <br>  
+                
+                <button type="button" (click)="edit()" id="edit">Edit</button>
             </div>
         </div>
     </div>

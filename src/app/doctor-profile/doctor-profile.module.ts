@@ -11,4 +11,5 @@ import { DoctorProfileComponent } from './doctor-profile.component';
     CommonModule
   ]
 })
-export class DoctorProfileModule { }
+export class DoctorProfileModule { 
+}
