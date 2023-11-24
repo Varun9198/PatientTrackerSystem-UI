@@ -21,13 +21,15 @@ interface CASES{
 export class DoctorRescheduleComponent {
   form:FormGroup = this.fb.group({
     appointment_number: ['', Validators.required],
-    new_time: ['', Validators.required]
+    new_time: ['', Validators.required],
+    new_date: ['', Validators.required]
   });
   Cases: CASES[] = UsersJson;
   constructor(private fb:FormBuilder){}
   reschedule(){
     let appointment_number = this.form.value.appointment_number;
     let new_time = this.form.value.new_time;
+    let new_date = this.form.value.new_date;
     if (appointment_number<=0){
       alert('Invalid appointment id');
     }
