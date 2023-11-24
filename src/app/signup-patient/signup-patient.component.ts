@@ -20,7 +20,6 @@ export class SignupPatientComponent {
     height: ['', Validators.required],
     address: ['', Validators.required],
     phone_number: ['', Validators.required],
-    email: ['', Validators.required]
   });
 
   constructor(private fb: FormBuilder, private router: Router){}
@@ -34,7 +33,6 @@ export class SignupPatientComponent {
     let height = this.form.value.height;
     let address = this.form.value.address;
     let phone_number = this.form.value.phone_number;
-    let email = this.form.value.email;
     alert('Account Created');
     this.router.navigateByUrl('PatientLogin')
   }
