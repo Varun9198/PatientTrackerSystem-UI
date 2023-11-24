@@ -11,22 +11,39 @@ import { FormGroup, FormBuilder, ReactiveFormsModule, Validators } from "@angula
 })
 export class ForgotPassComponent {
 
-  form:FormGroup = this.fb.group({
+  form_otp:FormGroup = this.fb.group({
     username: ['', Validators.required],
+  });
+
+  form_password:FormGroup = this.fb.group({
+    OTP: ['', Validators.required],
     password: ['', Validators.required],
     confirm_pass: ['', Validators.required]
   });
 
+
   constructor(private fb: FormBuilder, private router: Router) {}
 
+  get_otp(){
+    let radio_element = document.getElementsByName("action")
+    let username = 'doctor';
+    for (let i =0; i<radio_element.length; i++){
+      if ((<HTMLInputElement>radio_element[i]).checked){
+        
+        username = (<HTMLInputElement>radio_element[i]).value;
+      }
+    }
+  }
+
   redirect(){
-    let username = this.form.value.username
-    let password = this.form.value.password
-    let confirm_pass = this.form.value.confirm_pass
+    let otp = this.form_password.value.OTP
+    let password = this.form_password.value.password
+    let confirm_pass = this.form_password.value.confirm_pass
     if (confirm_pass!=password)
     {
       alert('Password not matching')
     }
+    alert('Password Successfully changed')
     this.router.navigate([''])
   }
 }
