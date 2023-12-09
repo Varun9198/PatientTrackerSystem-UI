@@ -1,0 +1,46 @@
+<body>
+    <div class="header">
+        <div class="dashboard-img">
+            <img id ="dash-img" src="../../assets/images/doctor-dashboard-icon.png">
+        </div>
+        <div class = "dashboard-heading">
+            <h2> Upcoming Appointments </h2>
+        </div>
+      <div class="dashboard-logout">
+        <a  href="PatientLogin">Log Out</a>
+      </div>
+    </div>
+    <div class="column-split">
+      <div class="options">
+        <a href="PatientLogin/Profile">Profile</a> <br>
+        <a href="PatientLogin/Dashboard">Dashboard</a><br>
+        <a href="PatientLogin/UpcomingAppointments">Upcoming Appointments</a><br>
+        <a href="PatientLogin/CaseHistory">Case History</a><br>
+        <a href="PatientLogin/Reschedule">Reschedule Appointment</a><br>
+        <a href="PatientLogin/UpdateCase">Update Case</a><br>
+      </div>
+
+        <div class="appointment-cases">
+            <div class="div-table">
+            <table class="table">
+                <thead>
+                    <tr>
+                      <th>Id</th>
+                      <th>Name</th>
+                      <th>Username</th>
+                      <th>Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let user of Cases">
+                    <td>{{ user.id }}</td>
+                    <td>{{ user.name }}</td>
+                    <td>{{ user.username }}</td>
+                    <td>{{ user.email }}</td>
+                  </tr>
+                </tbody>
+              </table>
+              </div>
+        </div>
+    </div>
+</body>

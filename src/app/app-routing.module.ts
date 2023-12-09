@@ -29,6 +29,9 @@ const routes: Routes = [
   {path: 'DoctorLogin/Reschedule', component: DoctorRescheduleComponent},
   {path: 'DoctorLogin/Edit', component: DoctorEditComponent},
   {path: 'DoctorLogin/UpdateCase', component: DoctorUpdateCaseComponent},
+  {path: 'PatientLogin/Dashboard', component: PatientDashboardComponent},
+  {path: 'PatientLogin/UpcomingAppointments', component: PatientUpcomingAppComponent},
+  {path: 'PatientLogin/CaseHistory', component: PatientCaseHistoryComponent},
 ]
 
 @NgModule({
