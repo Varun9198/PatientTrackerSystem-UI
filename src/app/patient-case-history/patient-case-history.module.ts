@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DoctorCaseHistoryComponent } from './doctor-case-history.component';
+import { PatientCaseHistoryComponent } from './patient-case-history.component';
 
 
 
@@ -11,4 +11,4 @@ import { DoctorCaseHistoryComponent } from './doctor-case-history.component';
     CommonModule
   ]
 })
-export class DoctorCaseHistoryModule { }
+export class PatientCaseHistoryModule { }

@@ -12,11 +12,11 @@ interface CASES{
 @Component({
   standalone: true,
   selector: 'app-doctor-case-history',
-  templateUrl: './doctor-case-history.component.html',
-  styleUrls: ['./doctor-case-history.component.css'],
+  templateUrl: './patient-case-history.component.html',
+  styleUrls: ['./patient-case-history.component.css'],
   imports: [CommonModule]
 })
-export class DoctorCaseHistoryComponent {
+export class PatientCaseHistoryComponent {
   Cases: CASES[] = UsersJson;
   constructor(){}
 }

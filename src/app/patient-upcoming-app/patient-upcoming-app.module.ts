@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DoctorUpcomingAppComponent } from './doctor-upcoming-app.component';
+import { PatientUpcomingAppComponent } from './patient-upcoming-app.component';
 
 
 
@@ -11,4 +11,4 @@ import { DoctorUpcomingAppComponent } from './doctor-upcoming-app.component';
     CommonModule
   ]
 })
-export class DoctorUpcomingAppModule { }
+export class PatientUpcomingAppModule { }

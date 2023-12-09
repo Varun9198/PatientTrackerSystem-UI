@@ -13,6 +13,9 @@ import { DoctorUpcomingAppComponent } from './doctor-upcoming-app/doctor-upcomin
 import { DoctorRescheduleComponent } from './doctor-reschedule/doctor-reschedule.component';
 import { DoctorEditComponent } from './doctor-edit/doctor-edit.component';
 import { DoctorUpdateCaseComponent } from './doctor-update-case/doctor-update-case.component';
+import { PatientDashboardComponent } from './patient-dashboard/patient-dashboard.component';
+import { PatientUpcomingAppComponent } from './patient-upcoming-app/patient-upcoming-app.component';
+import { PatientCaseHistoryComponent } from './patient-case-history/patient-case-history.component';
 
 const routes: Routes = [
   {path: '', component: LandingPageComponent},

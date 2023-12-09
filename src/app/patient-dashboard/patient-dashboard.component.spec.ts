@@ -1,15 +1,15 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { DoctorDashboardComponent } from './doctor-dashboard.component';
+import { PatientDashboardComponent } from './patient-dashboard.component';
 
-describe('DoctorDashboardComponent', () => {
-  let component: DoctorDashboardComponent;
-  let fixture: ComponentFixture<DoctorDashboardComponent>;
+describe('PatientDashboardComponent', () => {
+  let component: PatientDashboardComponent;
+  let fixture: ComponentFixture<PatientDashboardComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [DoctorDashboardComponent]
+      declarations: [PatientDashboardComponent]
     });
-    fixture = TestBed.createComponent(DoctorDashboardComponent);
+    fixture = TestBed.createComponent(PatientDashboardComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -11,12 +11,12 @@ interface CASES{
 
 @Component({
   standalone: true,
-  selector: 'app-doctor-upcoming-app',
-  templateUrl: './doctor-upcoming-app.component.html',
-  styleUrls: ['./doctor-upcoming-app.component.css'],
+  selector: 'app-patient-upcoming-app',
+  templateUrl: './patient-upcoming-app.component.html',
+  styleUrls: ['./patient-upcoming-app.component.css'],
   imports: [CommonModule]
 })
-export class DoctorUpcomingAppComponent {
+export class PatientUpcomingAppComponent {
   Cases: CASES[] = UsersJson;
   constructor(){}
 
