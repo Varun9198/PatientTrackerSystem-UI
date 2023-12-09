@@ -15,7 +15,6 @@ import { DoctorEditComponent } from './doctor-edit/doctor-edit.component';
 import { DoctorUpdateCaseComponent } from './doctor-update-case/doctor-update-case.component';
 
 const routes: Routes = [
-  {path: '', component: DoctorUpdateCaseComponent},
   {path: '', component: LandingPageComponent},
   {path: 'DoctorLogin', component: LoginDoctorComponent},
   {path: 'PatientLogin', component: LoginPatientComponent, },
@@ -29,6 +28,7 @@ const routes: Routes = [
   {path: 'DoctorLogin/UpcomingAppointments', component: DoctorUpcomingAppComponent},
   {path: 'DoctorLogin/Reschedule', component: DoctorRescheduleComponent},
   {path: 'DoctorLogin/Edit', component: DoctorEditComponent},
+  {path: 'DoctorLogin/UpdateCase', component: DoctorUpdateCaseComponent},
 ]
 
 @NgModule({
