@@ -1,6 +1,7 @@
 body {
     height: 100vh;
     margin: 0;
+    font-family: 'Roboto', sans-serif;
   }
   
   .header {
@@ -72,3 +73,15 @@ body {
     /* background-color: red; */
   }
   
+  a{
+    text-decoration: none;
+    color: #fff;
+  }
+
+  h2{
+    text-align: center;
+  }
+
+  .options{
+    padding-top: 120px;
+  }

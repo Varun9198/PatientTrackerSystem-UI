@@ -1,6 +1,7 @@
   body {
     height: 100vh;
     margin: 0;
+    font-family: 'Roboto', sans-serif;
   }
   
   .header {
@@ -40,7 +41,7 @@
     padding: 20px;
     background-color: #ecf0f1;
   }
-  
+
   .options a {
     display: block;
     margin-bottom: 10px;
@@ -54,6 +55,7 @@
   }
   
   .div-table{
+    margin-bottom: 50px;
     max-height: 200px;
     overflow: auto;
   }
@@ -82,4 +84,16 @@
     background-color: #e0e0e0;
   }
 
+  a{
+    text-decoration: none;
+    color: #fff;
+  }
+
+  h2{
+    text-align: center;
+  }
+
+  .options{
+    padding-top: 120px;
+  }
   
