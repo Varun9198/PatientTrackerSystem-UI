@@ -44,7 +44,10 @@
             <pre></pre>
         </div>
         <div class="select-appointment" [formGroup]="form">
-            <input type="number" formControlName="appointment_number"><br>
+            <input id="appointment-form" type="number" placeholder="Enter Case ID"  formControlName="appointment_number"><br>
+            <input id='appointment-form' type="text" placeholder="Enter name"  formControlName="name"><br>
+            <input id="appointment-form" type="text" placeholder="Enter username"  formControlName="username"><br>
+            <input id="appointment-form" type="text" placeholder="Enter updated email"  formControlName="email"><br>
             <button type="button" (click)="reschedule()" [disabled]="!form.valid">Edit Case</button><br>
         </div>
     </div>
