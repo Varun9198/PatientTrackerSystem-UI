@@ -33,11 +33,11 @@ export class DoctorDashboardComponent implements OnInit {
   
   ngOnInit(){
     var MyChart = new Chart('MyChart', {
-      type: 'bar',
+      type: 'line',
     data: {
-      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+      labels: ['1', '2', '3', '4', '5', '6'],
       datasets: [{
-        label: '# of Votes',
+        label: '# of Cases',
         data: [12, 19, 3, 5, 2, 3],
         borderWidth: 1
       }]
