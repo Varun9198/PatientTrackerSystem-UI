@@ -12,8 +12,10 @@ import { DoctorProfileComponent } from './doctor-profile/doctor-profile.componen
 import { DoctorUpcomingAppComponent } from './doctor-upcoming-app/doctor-upcoming-app.component';
 import { DoctorRescheduleComponent } from './doctor-reschedule/doctor-reschedule.component';
 import { DoctorEditComponent } from './doctor-edit/doctor-edit.component';
+import { DoctorUpdateCaseComponent } from './doctor-update-case/doctor-update-case.component';
 
 const routes: Routes = [
+  {path: '', component: DoctorUpdateCaseComponent},
   {path: '', component: LandingPageComponent},
   {path: 'DoctorLogin', component: LoginDoctorComponent},
   {path: 'PatientLogin', component: LoginPatientComponent, },
