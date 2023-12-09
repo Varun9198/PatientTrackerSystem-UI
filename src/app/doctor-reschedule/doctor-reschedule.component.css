@@ -117,3 +117,7 @@ body {
   .options{
     padding-top: 120px;
   }
+
+  #form-input{
+    margin-right: 15px;
+  }

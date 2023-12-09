@@ -44,8 +44,8 @@
             <pre></pre>
         </div>
         <div class="select-appointment" [formGroup]="form">
-            <input type="number" formControlName="appointment_number"><br>
-            <select id="time" formControlName="new_time">
+            <input id='form-input' type="number" formControlName="appointment_number"><br>
+            <select id='form-input' formControlName="new_time">
                 <option value="09:00">09:00</option>
                 <option value="09:30">09:30</option>
                 <option value="10:00">10:00</option>
@@ -64,7 +64,7 @@
                 <option value="16:30">16:30</option>
                 <option value="17:00">17:00</option>
             </select>
-            <input type="date" formControlName="new_date"><br>
+            <input id='form-input' type="date" formControlName="new_date"><br>
             <button type="button" (click)="reschedule()" [disabled]="!form.valid">Reschedule</button><br>
         </div>
     </div>
