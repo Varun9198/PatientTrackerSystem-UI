@@ -1,13 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import UsersJson from '../../assets/users.json'
-
-interface CASES{
-  id: Number;
-  name: String;
-  username: String;
-  email: String;
-}
+// import UsersJson from '../../assets/users.json'
+import { APPOINTMENTS } from "../app.component";
 
 @Component({
   standalone: true,
@@ -17,7 +11,7 @@ interface CASES{
   imports: [CommonModule]
 })
 export class PatientUpcomingAppComponent {
-  Cases: CASES[] = UsersJson;
+  Cases: APPOINTMENTS[] = [];
   constructor(){}
 
 }

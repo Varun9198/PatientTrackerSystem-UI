@@ -25,18 +25,22 @@
             <table class="table">
                 <thead>
                     <tr>
-                      <th>Id</th>
-                      <th>Name</th>
-                      <th>Username</th>
-                      <th>Email</th>
+                      <th>Appointment ID</th>
+                      <th>Case ID</th>
+                      <th>Patient ID</th>
+                      <th>Doctor ID</th>
+                      <th>Date</th>
+                      <th>Time</th>
                     </tr>
                 </thead>
                 <tbody>
                   <tr *ngFor="let user of Cases">
-                    <td>{{ user.id }}</td>
-                    <td>{{ user.name }}</td>
-                    <td>{{ user.username }}</td>
-                    <td>{{ user.email }}</td>
+                    <td>{{ user.appointment_id }}</td>
+                    <td>{{ user.case_id }}</td>
+                    <td>{{ user.patient_id }}</td>
+                    <td>{{ user.doctor_id }}</td>
+                    <td>{{ user.date }}</td>
+                    <td>{{ user.time }}</td>
                   </tr>
                 </tbody>
               </table>

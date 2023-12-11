@@ -1,15 +1,8 @@
 import { Component } from '@angular/core';
-import UsersJson from '../../assets/users.json'
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from "@angular/forms";
 import { Router } from '@angular/router';
-
-interface CASES{
-  id: Number;
-  name: String;
-  username: String;
-  email: String;
-}
+import { CASES } from "../app.component";
 
 @Component({
   standalone: true,
@@ -24,7 +17,7 @@ export class PatientAppointmentDetailsComponent {
     time: ['', Validators.required],
     date: ['', Validators.required],
   });
-  Cases: CASES[] = UsersJson;
+  Cases: CASES[] = [];
   constructor(private fb: FormBuilder, private router: Router){}
 
   book(){

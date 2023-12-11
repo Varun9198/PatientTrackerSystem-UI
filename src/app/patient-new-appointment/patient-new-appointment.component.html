@@ -33,7 +33,11 @@
                     <tr>
                       <th>Id</th>
                       <th>Name</th>
-                      <th>Username</th>
+                      <th>DOB</th>
+                      <th>Hospital</th>
+                      <th>Speciality</th>
+                      <th>Address</th>
+                      <th>Phone Number</th>
                       <th>Email</th>
                     </tr>
                 </thead>
@@ -41,7 +45,11 @@
                   <tr *ngFor="let user of Cases">
                     <td>{{ user.id }}</td>
                     <td>{{ user.name }}</td>
-                    <td>{{ user.username }}</td>
+                    <td>{{ user.dob }}</td>
+                    <td>{{ user.hospital }}</td>
+                    <td>{{ user.speciality }}</td>
+                    <td>{{ user.address }}</td>
+                    <td>{{ user.phone_number }}</td>
                     <td>{{ user.email }}</td>
                   </tr>
                 </tbody>

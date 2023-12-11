@@ -1,15 +1,8 @@
 import { Component, NgModule, OnInit } from '@angular/core';
-import UsersJson from '../../assets/users.json'
 import { CommonModule } from '@angular/common';
 import { Chart } from "chart.js/auto";
 import { LocationStrategy } from "@angular/common";
-
-interface CASES{
-  id: Number;
-  name: String;
-  username: String;
-  email: String;
-}
+import { APPOINTMENTS, CASES } from "../app.component";
 
 @Component({
   standalone: true,
@@ -21,7 +14,8 @@ interface CASES{
 
 
 export class PatientDashboardComponent implements OnInit {
-  Cases: CASES[] = UsersJson;
+  Appointments: APPOINTMENTS[] = [];
+  Cases: CASES[] = [];
   
   constructor(private platformLocation: LocationStrategy){
     console.log(location.href);
