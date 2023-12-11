@@ -31,8 +31,12 @@ export class PatientAppointmentDetailsComponent {
     let case_id = this.form.value.case_id 
     let time = this.form.value.time
     let date = this.form.value.date
-
-    alert('Appointment Successfully Booked')
+    if (case_id<=0){
+      alert('Invalid Case Id');
+    }
+    else{
+      alert('Appointment Successfully Booked')
     this.router.navigate(['PatientLogin/NewAppointment']);
+    }
   }
 }
