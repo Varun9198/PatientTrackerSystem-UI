@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PatientAppointmentDetailsComponent } from './patient-appointment-details.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
 @NgModule({
   declarations: [
-    PatientAppointmentDetailsComponent
   ],
   imports: [
-    CommonModule
+    CommonModule, ReactiveFormsModule
   ]
 })
 export class PatientAppointmentDetailsModule { }

@@ -36,6 +36,6 @@ export class PatientNewAppointmentComponent {
   }
   
   select_doctor(){
-  this.router.navigate(['PatientLogin/NewAppointment/DoctorSelect']);
+  this.router.navigate(['PatientLogin/NewAppointment/EnterDetails']);
   }
 }

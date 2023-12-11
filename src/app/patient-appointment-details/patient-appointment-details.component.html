@@ -1,1 +1,70 @@
-<p>patient-appointment-details works!</p>
+<body>
+    <div class="header">
+        <div class="dashboard-img">
+            <img id ="dash-img" src="../../assets/images/patient-dashboard.png">
+        </div>
+        <div class = "dashboard-heading">
+            <h2> Enter New Appointment Details</h2>
+        </div>
+      <div class="dashboard-logout">
+        <a  href="PatientLogin">Log Out</a>
+      </div>
+    </div>
+    <div class="column-split">
+      <div class="options">
+        <a href="PatientLogin/Profile">Profile</a> <br>
+        <a href="PatientLogin/Dashboard">Dashboard</a><br>
+        <a href="PatientLogin/UpcomingAppointments">Upcoming Appointments</a><br>
+        <a href="PatientLogin/CaseHistory">Case History</a><br>
+        <a href="PatientLogin/Reschedule">Reschedule Appointment</a><br>
+        <a href="PatientLogin/NewAppointment">Book New Appointment</a><br>
+      </div>
+
+        <div class="appointment-cases">
+          <div class="div-table">
+            <table class="table">
+                <thead>
+                    <tr>
+                      <th>Id</th>
+                      <th>Name</th>
+                      <th>Username</th>
+                      <th>Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let user of Cases">
+                    <td>{{ user.id }}</td>
+                    <td>{{ user.name }}</td>
+                    <td>{{ user.username }}</td>
+                    <td>{{ user.email }}</td>
+                  </tr>
+                </tbody>
+              </table>
+              </div>
+              <div class="enter_id" [formGroup]="form">
+                <input type="number" placeholder="Case ID" id="appointment_details" formControlName="case_id">
+                <select id='appointment_details' formControlName="time">
+                    <option value="09:00">09:00</option>
+                    <option value="09:30">09:30</option>
+                    <option value="10:00">10:00</option>
+                    <option value="10:30">10:30</option>
+                    <option value="11:00">11:00</option>
+                    <option value="11:30">11:30</option>
+                    <option value="12:00">12:00</option>
+                    <option value="12:30">12:30</option>
+                    <option value="13:00">13:00</option>
+                    <option value="13:30">13:30</option>
+                    <option value="14:00">14:00</option>
+                    <option value="14:30">14:30</option>
+                    <option value="15:00">15:00</option>
+                    <option value="15:30">15:30</option>
+                    <option value="16:00">16:00</option>
+                    <option value="16:30">16:30</option>
+                    <option value="17:00">17:00</option>
+                </select>
+                <input id='appointment_details' type="date" formControlName="date">    
+                <button type="button" [disabled]="!form.valid" (click)="book()">Book Appointment</button>
+              </div>
+        </div>
+    </div>
+</body>
