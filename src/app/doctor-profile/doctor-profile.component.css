@@ -70,7 +70,6 @@ body {
     padding-top: 50px;
     padding-left: 100px;
     width: 70%;
-    /* background-color: red; */
   }
   
   a{
@@ -84,4 +83,25 @@ body {
 
   .options{
     padding-top: 120px;
+  }
+
+  input, label{
+    font-size: medium;
+    border: none;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  label{
+    margin-right: 10px;
+  }
+
+  input{
+    width: auto;
+    border-radius: 10px;
+  }
+
+  button{
+    margin-left: 70px;
+    border-radius: 10px;
+    width: 50px;
   }
