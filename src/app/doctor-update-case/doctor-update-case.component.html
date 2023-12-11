@@ -26,17 +26,25 @@
                 <thead>
                     <tr>
                       <th>Id</th>
-                      <th>Name</th>
-                      <th>Username</th>
-                      <th>Email</th>
+                      <th>Patient ID</th>
+                      <th>Doctor ID</th>
+                      <th>Open Date</th>
+                      <th>Close Date</th>
+                      <th>Symptoms</th>
+                      <th>Medicines</th>
+                      <th>Cost</th>
                     </tr>
                 </thead>
                 <tbody>
                   <tr *ngFor="let user of Cases">
                     <td>{{ user.id }}</td>
-                    <td>{{ user.name }}</td>
-                    <td>{{ user.username }}</td>
-                    <td>{{ user.email }}</td>
+                    <td>{{ user.patient_id }}</td>
+                    <td>{{ user.doctor_id }}</td>
+                    <td>{{ user.open_date }}</td>
+                    <td>{{ user.close_date }}</td>
+                    <td>{{ user.symptoms }}</td>
+                    <td>{{ user.medicines }}</td>
+                    <td>{{ user.cost }}</td>
                   </tr>
                 </tbody>
               </table>
@@ -44,12 +52,13 @@
             <pre></pre>
         </div>
         <div class="select-appointment" [formGroup]="form">
-            <input id="appointment-form" type="number" placeholder="Enter Case ID"  formControlName="appointment_number"><br>
-            <input id='appointment-form' type="text" placeholder="Enter name"  formControlName="name"><br>
-            <input id="appointment-form" type="text" placeholder="Enter username"  formControlName="username"><br>
-            <input id="appointment-form" type="text" placeholder="Enter updated email"  formControlName="email"><br>
-            <button type="button" (click)="reschedule()" [disabled]="!form.valid">Edit Case</button><br>
+            <input id="appointment-form" type="number" placeholder="Enter Case ID"  formControlName="case_id"><br>
+            <input id='appointment-form' type="text" placeholder="Update Close Date"  formControlName="close_date"><br>
+            <input id="appointment-form" type="text" placeholder="Update Symptoms"  formControlName="symptoms"><br>
+            <input id="appointment-form" type="text" placeholder="Update Medicines"  formControlName="medicines"><br>
+            <input id="appointment-form" type="text" placeholder="Update Cost"  formControlName="cost"><br>
         </div>
+        <button type="button" (click)="reschedule()" [disabled]="!form.valid">Edit Case</button><br>
     </div>
     </div>
 </body>

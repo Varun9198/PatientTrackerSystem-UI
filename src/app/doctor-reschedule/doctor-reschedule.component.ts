@@ -1,14 +1,7 @@
 import { Component } from '@angular/core';
-import UsersJson from '../../assets/users.json'
 import { CommonModule } from '@angular/common';
 import { Form, FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-
-interface CASES{
-  id: Number;
-  name: String;
-  username: String;
-  email: String;
-}
+import { APPOINTMENTS } from "../app.component";
 
 @Component({
   standalone: true, 
@@ -24,7 +17,7 @@ export class DoctorRescheduleComponent {
     new_time: ['', Validators.required],
     new_date: ['', Validators.required]
   });
-  Cases: CASES[] = UsersJson;
+  Cases: APPOINTMENTS[] = [];
   constructor(private fb:FormBuilder){}
   reschedule(){
     let appointment_number = this.form.value.appointment_number;

@@ -65,7 +65,6 @@ body {
   }
   
   .select-appointment{
-    width: 80%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -120,4 +119,14 @@ body {
 
   #form-input{
     margin-right: 15px;
+  }
+
+  input, select{
+    border-color: #3498db;
+    border-style: solid;
+    border-radius: 10px;
+  }
+
+  button{
+    margin-left: 550px;
   }
