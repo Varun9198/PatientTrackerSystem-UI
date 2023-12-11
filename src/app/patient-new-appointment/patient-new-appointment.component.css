@@ -8,7 +8,7 @@ body {
     display: flex;
     align-items: center;
     height: 10vh;
-    background-color: #3498db;
+    background-color: darkblue;
     color: #fff;
     padding: 0 20px;
   }
@@ -58,7 +58,16 @@ body {
   }
 
   .enter_id{
-    width: 80%;
+    display: flex;
+    /* width: 80%; */
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .filter_div{
+    /* width: 80%; */
+    display: flex;
     padding: 20px;
     align-items: center;
     justify-content: center;
@@ -86,7 +95,7 @@ body {
   }
   
   th {
-    background-color: #3498db;
+    background-color: darkblue;
     color: #fff;
   }
   
@@ -111,3 +120,23 @@ body {
     padding-top: 120px;
   }
   
+  input, select{
+    text-align: center;
+    border-style: solid;
+    border-color: #3498db;
+  }
+
+  button{
+    margin-left: 550px;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
+
+  button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+
+  input, select, button{
+    border-radius: 10px;
+  }
