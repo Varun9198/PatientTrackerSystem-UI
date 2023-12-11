@@ -21,10 +21,13 @@
       </div>
 
         <div class="appointment-cases">
-          <p>
-            Enter Search text fields and a button, then at the end make it enter a case id and doctor id for appoitnemnt if there are appointments with a doctor else just enter the doctor name 
-          </p>
-            <div class="div-table">
+          <div class="filter_div" [formGroup]="form2">
+          <input type="text" placeholder="Speciality" id="filters" formControlName="speciality">
+          <input type="text" placeholder="Location" id="filters" formControlName="location">
+          <input type="text" placeholder="Name" id="filters" formControlName="name">
+          <button type="button" (click)="filter()">Filter</button>
+          </div>  
+          <div class="div-table">
             <table class="table">
                 <thead>
                     <tr>
@@ -43,6 +46,10 @@
                   </tr>
                 </tbody>
               </table>
+              </div>
+              <div class="enter_id" [formGroup]="form">
+                <input type="number" placeholder="Doctor ID" id="select_doctor" formControlName="doctor_id">
+                <button type="button" (click)="select_doctor()" [disabled]="!form.valid">Submit</button>
               </div>
         </div>
     </div>
