@@ -5,6 +5,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { PatientServiceService } from './patient-service.service';
+import { DoctorServiceService } from './doctor-service.service';
+import { CaseServiceService } from './case-service.service';
+import { AppointmentServiceService } from './appointment-service.service';
 
 @NgModule({
   declarations: [
@@ -16,7 +20,7 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [PatientServiceService, DoctorServiceService, CaseServiceService, AppointmentServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
