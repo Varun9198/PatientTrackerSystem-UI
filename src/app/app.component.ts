@@ -52,3 +52,40 @@ export interface APPOINTMENTS{
   date: String;
   time: String;
 }
+
+export interface EDIT_DOCTOR{
+  doctor_id: Number;
+  hospital: String;
+  speciality: String;
+  address: String;
+  phone_number: String;
+}
+
+export interface EDIT_PATIENT{
+  patient_id: Number;
+  height: Number;
+  weight: Number;
+  address: String;
+  phone_number: String;
+}
+
+export interface RESCHEDULE{
+  appointment_id: Number;
+  newDate: String;
+  newTime: String;
+}
+
+export interface NEWCASE{
+  case_id: Number;
+  patient_id: Number;
+  doctor_id: Number;
+  date: String;
+  time: String;
+}
+
+export interface UPDATE_CASE{
+  case_id: Number;
+  symptoms: String;
+  medicines: String;
+  cost: Number;
+}
