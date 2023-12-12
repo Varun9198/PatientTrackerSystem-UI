@@ -10,6 +10,7 @@ import { DoctorServiceService } from './services/doctor-service.service';
 import { CaseServiceService } from './services/case-service.service';
 import { AppointmentServiceService } from './services/appointment-service.service';
 import { PasswordChangeService } from './services/password-change.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { PasswordChangeService } from './services/password-change.service';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [PatientServiceService, DoctorServiceService, CaseServiceService, AppointmentServiceService, PasswordChangeService],
   bootstrap: [AppComponent]

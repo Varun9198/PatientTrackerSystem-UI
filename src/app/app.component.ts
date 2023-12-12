@@ -11,13 +11,13 @@ export class AppComponent {
 }
 
 export interface DOCTOR_SIGNUP{
-  username: String,
+  appendedEmail: String,
   dob: String, 
   hospital: String,
   speciality: String, 
   address: String, 
-  phoneNumber: String, 
-  email: String, 
+  phoneNumber: String,
+  name: String,
   password: String
 }
 

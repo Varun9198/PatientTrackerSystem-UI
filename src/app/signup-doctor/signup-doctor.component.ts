@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from "@angular/router";
+import { DoctorServiceService } from '../services/doctor-service.service';
+import { DOCTOR_SIGNUP } from '../app.component';
 
 @Component({
   standalone: true,
@@ -22,18 +24,22 @@ export class SignupDoctorComponent {
     phone_number: ['', Validators.required],
   });
 
-  constructor(private fb: FormBuilder, private router: Router){}
+  constructor(private fb: FormBuilder, private router: Router, private doctorService: DoctorServiceService){}
   
   signup(){
-    let username = this.form.value.username;
-    let password = this.form.value.password;
-    let name = this.form.value.name;
-    let dob = this.form.value.dob;
-    let hospital = this.form.value.hospital;
-    let speciality = this.form.value.speciality;
-    let address = this.form.value.address;
-    let phone_number = this.form.value.phone_number;
 
+    let doctorSignup: DOCTOR_SIGNUP = {
+      appendedEmail: "doctor:" + this.form.value.username,
+      password: this.form.value.password,
+      name: this.form.value.name,
+      dob: this.form.value.dob,
+      hospital: this.form.value.hospital,
+      speciality: this.form.value.speciality,
+      address: this.form.value.address,
+      phoneNumber: this.form.value.phone_number
+    };
+
+    console.log(this.doctorService.signup_doctor(doctorSignup))
     alert('Account Created');
     this.router.navigateByUrl('DoctorLogin')
   }
