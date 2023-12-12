@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { CASES, UPDATE_CASE } from "./app.component";
+import { CASES, UPDATE_CASE } from "../app.component";
 import { HttpClient, HttpParams } from "@angular/common/http";
 import { Observable } from 'rxjs';
 

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { APPOINTMENTS, RESCHEDULE, NEWCASE } from "./app.component";
+import { APPOINTMENTS, RESCHEDULE, NEWCASE } from "../app.component";
 import { HttpClient } from "@angular/common/http";
 import { Observable } from 'rxjs';
 

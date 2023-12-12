@@ -5,10 +5,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { PatientServiceService } from './patient-service.service';
-import { DoctorServiceService } from './doctor-service.service';
-import { CaseServiceService } from './case-service.service';
-import { AppointmentServiceService } from './appointment-service.service';
+import { PatientServiceService } from './services/patient-service.service';
+import { DoctorServiceService } from './services/doctor-service.service';
+import { CaseServiceService } from './services/case-service.service';
+import { AppointmentServiceService } from './services/appointment-service.service';
 
 @NgModule({
   declarations: [
