@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class DoctorServiceService {
 
-  constructor(private http: HttpClient) { 
+  constructor(private http: HttpClient) {
     this.http = http
   }
 
@@ -27,7 +27,7 @@ export class DoctorServiceService {
       .set("Content-Type", "application/json")
     };
     let id: string
-    this.http.post<any>('localhost:8080/doctors/signup', details, options)
+    this.http.post<any>('/doctors/signup', details, options)
     .subscribe(data => {
       id = data.body.id
       console.log(id);
