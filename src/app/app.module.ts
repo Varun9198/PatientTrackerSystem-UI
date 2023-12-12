@@ -9,6 +9,7 @@ import { PatientServiceService } from './services/patient-service.service';
 import { DoctorServiceService } from './services/doctor-service.service';
 import { CaseServiceService } from './services/case-service.service';
 import { AppointmentServiceService } from './services/appointment-service.service';
+import { PasswordChangeService } from './services/password-change.service';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import { AppointmentServiceService } from './services/appointment-service.servic
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [PatientServiceService, DoctorServiceService, CaseServiceService, AppointmentServiceService],
+  providers: [PatientServiceService, DoctorServiceService, CaseServiceService, AppointmentServiceService, PasswordChangeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

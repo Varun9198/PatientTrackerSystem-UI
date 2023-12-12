@@ -10,6 +10,17 @@ export class AppComponent {
   title = 'PatientTrackerSystem-UI';
 }
 
+export interface DOCTOR_SIGNUP{
+  username: String,
+  dob: String, 
+  hospital: String,
+  speciality: String, 
+  address: String, 
+  phoneNumber: String, 
+  email: String, 
+  password: String
+}
+
 export interface DOCTORS{
   id: Number;
   name: String;

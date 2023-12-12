@@ -10,8 +10,8 @@ export class AppointmentServiceService {
 
   constructor(private http: HttpClient) { }
 
-  public view_today(): Observable<APPOINTMENTS[]>{
-    return this.http.get<APPOINTMENTS[]>('localhost:8080/appointments/view-today')
+  public view_today(): Observable<any>{
+    return this.http.get<any>('localhost:8080/appointments/view-today')
   }
 
   public view_future(): Observable<APPOINTMENTS[]>{

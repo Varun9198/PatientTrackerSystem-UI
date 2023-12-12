@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { DOCTORS, EDIT_DOCTOR } from "../app.component";
+import { DOCTORS, EDIT_DOCTOR, DOCTOR_SIGNUP } from "../app.component";
 import { HttpClient } from "@angular/common/http";
 import { Observable } from 'rxjs';
 
@@ -18,8 +18,8 @@ export class DoctorServiceService {
     return this.http.get<DOCTORS>('localhost:8080/doctors/'+id)
   }
 
-  public signup_doctor(details: DOCTORS){
-    return this.http.post<DOCTORS>('localhost:8080/doctors/signup', details)
+  public signup_doctor(details: DOCTOR_SIGNUP): Observable<any>{
+    return this.http.post<any>('localhost:8080/doctors/signup', details)
   }
 
   public edit_details(details: EDIT_DOCTOR){
