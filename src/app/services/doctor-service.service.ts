@@ -16,8 +16,10 @@ export class DoctorServiceService {
     return this.http.get<DOCTORS[]>('localhost:8080/doctors')
   }
 
-  public get_doctor_by_id(id: Number): Observable<DOCTORS>{
-    return this.http.get<DOCTORS>('localhost:8080/doctors/'+id)
+  public get_doctor_by_id(id: String): Observable<BASE_RESPONSE>{
+    const bearerToken = localStorage.getItem("bearer_token") ?? '';
+    let headers = new HttpHeaders().set('Authorization', bearerToken);
+    return this.http.get<BASE_RESPONSE>('/doctors/'+id, {headers})
   }
 
   public login_doctor(details: USER_LOGIN): Observable<BASE_RESPONSE> {

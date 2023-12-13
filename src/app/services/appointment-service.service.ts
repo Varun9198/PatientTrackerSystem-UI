@@ -18,8 +18,11 @@ export class AppointmentServiceService {
     return this.http.post<BASE_RESPONSE>('/appointments/view-today', {'id': id, 'userType': userType}, { headers })
   }
 
-  public view_future(): Observable<APPOINTMENTS[]>{
-    return this.http.get<APPOINTMENTS[]>('localhost:8080/appointments/view-future')
+  public view_future(id: String, userType: String): Observable<BASE_RESPONSE> {
+    let body = {'id': id, 'userType': userType}
+    const bearerToken = localStorage.getItem("bearer_token") ?? '';
+    let headers = new HttpHeaders().set('Authorization', bearerToken);
+    return this.http.post<BASE_RESPONSE>('/appointments/view-future', body, { headers })
   }
 
   public reschedule(details: RESCHEDULE): Observable<any>{

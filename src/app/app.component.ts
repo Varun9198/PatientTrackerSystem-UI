@@ -17,10 +17,10 @@ export interface USER_LOGIN {
 
 export interface DOCTOR_SIGNUP{
   appendedEmail: String,
-  dob: String, 
+  dob: String,
   hospital: String,
-  speciality: String, 
-  address: String, 
+  speciality: String,
+  address: String,
   phoneNumber: String,
   name: String,
   password: String
@@ -39,7 +39,7 @@ export interface DOCTORS{
   hospital: String;
   speciality: String;
   address: String;
-  phone_number: String;
+  phoneNumber: String;
   email: String;
 }
 
@@ -61,8 +61,8 @@ export interface CASES{
   doctorId: Number;
   openDate: String;
   closeDate: String;
-  symptoms: String; 
-  medicines: String; 
+  symptoms: String;
+  medicines: String;
   cost: Number;
 }
 

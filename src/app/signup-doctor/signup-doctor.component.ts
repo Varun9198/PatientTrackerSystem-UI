@@ -12,7 +12,7 @@ import { DOCTOR_SIGNUP } from '../app.component';
   imports: [ReactiveFormsModule]
 })
 export class SignupDoctorComponent {
-  
+
   form:FormGroup = this.fb.group({
     username: ['', Validators.required],
     password: ['', Validators.required],
@@ -25,7 +25,7 @@ export class SignupDoctorComponent {
   });
 
   constructor(private fb: FormBuilder, private router: Router, private doctorService: DoctorServiceService){}
-  
+
   signup(){
 
     let doctorSignup: DOCTOR_SIGNUP = {
