@@ -16,7 +16,6 @@ export class DoctorUpdateCaseComponent {
     case_id: ['', Validators.required],
   });
   form:FormGroup = this.fb.group({
-    close_date: [],
     symptoms: ['', Validators.required],
     medicines: ['', Validators.required],
     cost: ['', Validators.required]
@@ -25,11 +24,10 @@ export class DoctorUpdateCaseComponent {
   constructor(private fb:FormBuilder){}
   reschedule(){
     let id = this.form_id.value.case_id;
-    let appointment_number = this.form.value.appointment_number;
-    let name = this.form.value.name;
-    let username = this.form.value.username;
-    let email = this.form.value.email;
-    if (appointment_number<=0){
+    let symptoms = this.form.value.symptoms;
+    let medicines = this.form.value.medicines;
+    let cost = this.form.value.cost;
+    if (id<=0){
       alert('Invalid appointment id');
     }
     alert('Appointment Rescheduled')
