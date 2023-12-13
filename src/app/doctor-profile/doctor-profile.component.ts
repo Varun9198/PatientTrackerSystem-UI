@@ -1,4 +1,4 @@
-import {CommonModule, LocationStrategy} from '@angular/common';
+import {CommonModule} from '@angular/common';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { DOCTORS} from "../app.component";
@@ -19,12 +19,7 @@ export class DoctorProfileComponent {
   speciality: String =  String('');
   address: String =  String('');
   phoneNumber: String =  String('');
-  constructor(private platformLocation: LocationStrategy, private doctorService: DoctorServiceService, private router: Router){
-    console.log(location.href);
-    history.pushState(null, '', location.href);
-    this.platformLocation.onPopState(() => {
-      history.pushState(null, '', location.href)
-    });
+  constructor(private doctorService: DoctorServiceService, private router: Router){
   }
   ngOnInit() {
 

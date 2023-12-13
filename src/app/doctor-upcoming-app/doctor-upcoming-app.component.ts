@@ -1,4 +1,4 @@
-import {CommonModule, LocationStrategy} from '@angular/common';
+import {CommonModule} from '@angular/common';
 import { Component } from '@angular/core';
 import { APPOINTMENTS } from "../app.component";
 import {AppointmentServiceService} from "../services/appointment-service.service";
@@ -12,12 +12,7 @@ import {AppointmentServiceService} from "../services/appointment-service.service
 })
 export class DoctorUpcomingAppComponent {
   Appointments: APPOINTMENTS[] = [];
-  constructor(private platformLocation: LocationStrategy, private appointmentService: AppointmentServiceService){
-    console.log(location.href);
-    history.pushState(null, '', location.href);
-    this.platformLocation.onPopState(() => {
-      history.pushState(null, '', location.href)
-    });
+  constructor(private appointmentService: AppointmentServiceService){
   }
 
   ngOnInit(){

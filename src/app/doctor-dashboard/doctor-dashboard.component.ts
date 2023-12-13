@@ -6,6 +6,7 @@ import { CASES, APPOINTMENTS } from "../app.component";
 import { AppointmentServiceService } from '../services/appointment-service.service';
 import { CaseServiceService } from '../services/case-service.service';
 import { filter } from 'rxjs';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   standalone: true,
@@ -21,8 +22,14 @@ export class DoctorDashboardComponent implements OnInit {
   Cases: CASES[] = [];
   labels: String[] = [];
   data: Number[] = [];
+  year: Number = 2021;
   
-  constructor(private platformLocation: LocationStrategy, private appointmentService: AppointmentServiceService, private caseService: CaseServiceService){
+
+  form: FormGroup = this.fb.group({
+    year_id: ['', Validators.required]
+  });
+
+  constructor(private fb: FormBuilder, private platformLocation: LocationStrategy, private appointmentService: AppointmentServiceService, private caseService: CaseServiceService){
     console.log(location.href);
     history.pushState(null, '', location.href);
     this.platformLocation.onPopState(() => {
@@ -58,8 +65,12 @@ export class DoctorDashboardComponent implements OnInit {
         console.log('error is: ', err)
       }
     )
+  }
 
-    this.caseService.get_monthly_cases(id, 2023).subscribe(
+  visualize(){
+    const id = localStorage.getItem('user_id') ?? "-1"
+    this.year = this.form.value.year_id
+    this.caseService.get_monthly_cases(id, this.year).subscribe(
       (response) => {
         var body = response.body
         this.labels = Object.keys(body)

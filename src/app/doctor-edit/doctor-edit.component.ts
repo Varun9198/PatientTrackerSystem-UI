@@ -1,5 +1,5 @@
-import {CommonModule, LocationStrategy} from '@angular/common';
-import { Component } from '@angular/core';
+import {CommonModule} from '@angular/common';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import {DoctorServiceService} from "../services/doctor-service.service";
@@ -13,7 +13,7 @@ import {DOCTORS, EDIT_DOCTOR} from "../app.component";
   imports: [CommonModule, ReactiveFormsModule]
 })
 
-export class DoctorEditComponent {
+export class DoctorEditComponent implements OnInit{
 
   form:FormGroup = this.fb.group({
     hospital: ['', Validators.required],
@@ -22,13 +22,8 @@ export class DoctorEditComponent {
     phone_number: ['', Validators.required]
   });
 
-  constructor(private fb:FormBuilder, private platformLocation: LocationStrategy,
+  constructor(private fb:FormBuilder,
               private router:Router, private doctorService:DoctorServiceService){
-    console.log(location.href);
-    history.pushState(null, '', location.href);
-    this.platformLocation.onPopState(() => {
-      history.pushState(null, '', location.href)
-    });
   }
 
   ngOnInit() {

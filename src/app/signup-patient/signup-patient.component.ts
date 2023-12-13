@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from "@angular/router";
+import { PatientServiceService } from '../services/patient-service.service';
+import { PATIENT_SIGNUP } from '../app.component';
 
 @Component({
   standalone: true,
@@ -22,19 +24,30 @@ export class SignupPatientComponent {
     phone_number: ['', Validators.required],
   });
 
-  constructor(private fb: FormBuilder, private router: Router){}
+  constructor(private fb: FormBuilder, private router: Router, private patientService: PatientServiceService){}
   
   signup(){
-    let username = this.form.value.username;
-    let password = this.form.value.password;
-    let name = this.form.value.name;
-    let dob = this.form.value.dob;
-    let weight = this.form.value.weight;
-    let height = this.form.value.height;
-    let address = this.form.value.address;
-    let phone_number = this.form.value.phone_number;
-    alert('Account Created');
-    this.router.navigateByUrl('PatientLogin')
+    let patientSignup: PATIENT_SIGNUP = {
+      appendedEmail: this.form.value.username,
+      password: this.form.value.password,
+      name: this.form.value.name,
+      dob: this.form.value.dob,
+      weight: this.form.value.weight,
+      height: this.form.value.height,
+      address: this.form.value.address,
+      phoneNumber: this.form.value.phone_number
+    };
+
+    this.patientService.signup_patient(patientSignup).subscribe(
+      (response) => {
+        console.log(response)
+        alert('Account Created');
+        this.router.navigateByUrl('PatientLogin')
+      },
+      (err) => {
+        alert("Incorrect details entered.")
+      }
+    )
   }
 
 }

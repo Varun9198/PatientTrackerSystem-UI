@@ -12,9 +12,10 @@ import { CASES } from "../app.component";
   imports: [CommonModule, ReactiveFormsModule]
 })
 export class DoctorUpdateCaseComponent {
-  form:FormGroup = this.fb.group({
+  form_id: FormGroup = this.fb.group({
     case_id: ['', Validators.required],
-    close_date: [],
+  });
+  form:FormGroup = this.fb.group({
     symptoms: ['', Validators.required],
     medicines: ['', Validators.required],
     cost: ['', Validators.required]
@@ -22,14 +23,22 @@ export class DoctorUpdateCaseComponent {
   Cases: CASES[] = [];
   constructor(private fb:FormBuilder){}
   reschedule(){
-    let appointment_number = this.form.value.appointment_number;
-    let name = this.form.value.name;
-    let username = this.form.value.username;
-    let email = this.form.value.email;
-    if (appointment_number<=0){
+    let id = this.form_id.value.case_id;
+    let symptoms = this.form.value.symptoms;
+    let medicines = this.form.value.medicines;
+    let cost = this.form.value.cost;
+    if (id<=0){
       alert('Invalid appointment id');
     }
     alert('Appointment Rescheduled')
+  }
+
+  closeCase(){
+    let current_date = new Date();
+    const year = current_date.getFullYear();
+    const month = current_date.getMonth()+1;
+    const day = current_date.getDate();
+    const formatted_date = `${year}-${month.toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}`;
   }
 
 }

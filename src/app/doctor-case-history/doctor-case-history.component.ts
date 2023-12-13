@@ -1,4 +1,4 @@
-import {CommonModule, LocationStrategy} from '@angular/common';
+import {CommonModule} from '@angular/common';
 import { Component } from '@angular/core';
 import { CASES } from "../app.component";
 import {CaseServiceService} from "../services/case-service.service";
@@ -12,12 +12,7 @@ import {CaseServiceService} from "../services/case-service.service";
 })
 export class DoctorCaseHistoryComponent {
   Cases: CASES[] = [];
-  constructor(private platformLocation: LocationStrategy, private caseService: CaseServiceService){
-    console.log(location.href);
-    history.pushState(null, '', location.href);
-    this.platformLocation.onPopState(() => {
-      history.pushState(null, '', location.href)
-    });
+  constructor(private caseService: CaseServiceService){
   }
 
   ngOnInit(){
