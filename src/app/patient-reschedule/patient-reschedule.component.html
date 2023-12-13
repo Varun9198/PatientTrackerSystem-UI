@@ -7,16 +7,16 @@
             <h2> Reschedule Appointment </h2>
         </div>
         <div class="dashboard-logout">
-            <a  href="PatientLogin">Log Out</a> 
-        </div> 
+            <a  href="PatientLogin">Log Out</a>
+        </div>
     </div>
     <div class="column-split">
-        <div class="options"> 
+        <div class="options">
             <a href="PatientLogin/Profile">Profile</a> <br>
             <a href="PatientLogin/Dashboard">Dashboard</a><br>
             <a href="PatientLogin/UpcomingAppointments">Upcoming Appointments</a><br>
-            <a href="PatientLogin/CaseHistory">Case History</a><br> 
-            <a href="PatientLogin/Reschedule">Reschedule Appointment</a><br> 
+            <a href="PatientLogin/CaseHistory">Case History</a><br>
+            <a href="PatientLogin/Reschedule">Reschedule Appointment</a><br>
             <a href="PatientLogin/NewAppointment">Book New Appointment</a><br>
         </div>
         <div class="right-frame">
@@ -34,7 +34,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                  <tr *ngFor="let user of Cases">
+                  <tr *ngFor="let user of Appointments">
                     <td>{{ user.appointmentId }}</td>
                     <td>{{ user.caseId }}</td>
                     <td>{{ user.patientId }}</td>

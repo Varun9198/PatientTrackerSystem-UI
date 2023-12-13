@@ -49,8 +49,6 @@ export class DoctorRescheduleComponent {
       newDate:  this.form.value.new_date,
       newTime: this.form.value.new_time
     };
-    console.log(rescheduleInstance.newDate)
-    console.log(rescheduleInstance.newTime)
     this.appointmentService.reschedule(rescheduleInstance).subscribe(
       (response) =>{
           console.log(response)
