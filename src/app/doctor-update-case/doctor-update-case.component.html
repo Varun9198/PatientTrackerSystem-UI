@@ -51,14 +51,17 @@
               </div>
             <pre></pre>
         </div>
+        <div class="case_id" [formGroup]="form_id">
+            <input id="enter-id" type="number" placeholder="Enter Case ID"  formControlName="case_id"><br>
+        </div>
         <div class="select-appointment" [formGroup]="form">
-            <input id="appointment-form" type="number" placeholder="Enter Case ID"  formControlName="case_id"><br>
             <input id='appointment-form' type="date" placeholder="Update Close Date"  formControlName="close_date"><br>
             <input id="appointment-form" type="text" placeholder="Update Symptoms"  formControlName="symptoms"><br>
             <input id="appointment-form" type="text" placeholder="Update Medicines"  formControlName="medicines"><br>
             <input id="appointment-form" type="text" placeholder="Update Cost"  formControlName="cost"><br>
         </div>
-        <button type="button" (click)="reschedule()" [disabled]="!form.valid">Edit Case</button><br>
+        <button type="button" (click)="reschedule()" [disabled]="!form.valid || !form_id.valid">Edit Case</button><br>
+        <button type="button" (click)="closeCase()" [disabled]="!form_id.valid">Close Case</button>
     </div>
     </div>
 </body>

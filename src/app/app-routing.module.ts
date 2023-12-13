@@ -18,6 +18,9 @@ import { PatientUpcomingAppComponent } from './patient-upcoming-app/patient-upco
 import { PatientCaseHistoryComponent } from './patient-case-history/patient-case-history.component';
 import { PatientNewAppointmentComponent } from './patient-new-appointment/patient-new-appointment.component';
 import { PatientAppointmentDetailsComponent } from './patient-appointment-details/patient-appointment-details.component';
+import { PatientProfileComponent } from './patient-profile/patient-profile.component';
+import { PatientEditComponent } from './patient-edit/patient-edit.component';
+import { PatientRescheduleComponent } from './patient-reschedule/patient-reschedule.component';
 
 const routes: Routes = [
   {path: '', component: LandingPageComponent},
@@ -38,7 +41,10 @@ const routes: Routes = [
   {path: 'PatientLogin/UpcomingAppointments', component: PatientUpcomingAppComponent},
   {path: 'PatientLogin/CaseHistory', component: PatientCaseHistoryComponent},
   {path: 'PatientLogin/NewAppointment', component: PatientNewAppointmentComponent},
-  {path: 'PatientLogin/NewAppointment/EnterDetails', component: PatientAppointmentDetailsComponent}
+  {path: 'PatientLogin/NewAppointment/EnterDetails', component: PatientAppointmentDetailsComponent},
+  {path: 'PatientLogin/Profile', component: PatientProfileComponent},
+  {path: 'PatientLogin/Edit', component: PatientEditComponent},
+  {path: 'PatientLogin/Reschedule', component: PatientRescheduleComponent}
 ]
 
 @NgModule({
