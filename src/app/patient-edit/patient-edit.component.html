@@ -1,0 +1,25 @@
+<div [formGroup]="form">
+    <h3>Edit Personal Details</h3> 
+    
+    <div class="weight">
+        <input placeholder="Weight" type="text" formControlName="weight">
+    </div>
+    <br>
+
+    <div class="height">
+        <input placeholder="Height" type="text" formControlName="height"> 
+    </div>
+    <br>
+    
+    <div class="address">
+        <input placeholder="Address" type="text" formControlName="address"> 
+    </div>
+    <br>
+    
+    <div class="phone-number">
+        <input placeholder="123-456-7890" type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" formControlName="phone_number"> 
+    </div>
+    <br>
+
+    <button type="button" (click)="submit()" [disabled]="!form.valid">Submit</button>
+</div>

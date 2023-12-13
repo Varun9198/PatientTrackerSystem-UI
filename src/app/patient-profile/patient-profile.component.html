@@ -1,0 +1,68 @@
+<body>
+    <div class="header">
+        <div class="dashboard-img">
+            <img id ="dash-img" src="../../assets/images/patient-dashboard.png">
+        </div>
+        <div class = "dashboard-heading">
+            <h2> Doctor Profile Summary </h2>
+        </div>
+        <div class="dashboard-logout">
+            <a  href="PatientLogin">Log Out</a>
+        </div>
+    </div>
+    <div class="column-split">
+        <div class="options">
+            <a href="PatientLogin/Profile">Profile</a> <br>
+            <a href="PatientLogin/Dashboard">Dashboard</a><br>
+            <a href="PatientLogin/UpcomingAppointments">Upcoming Appointments</a><br>
+            <a href="PatientLogin/CaseHistory">Case History</a><br>
+            <a href="PatientLogin/Reschedule">Reschedule Appointment</a><br>
+            <a href="PatientLogin/NewAppointment">Book New Appointment</a><br>
+        </div>
+        <div class="container">
+            <div class="div-image">
+                <img src="../../assets/images/patient-profile.png" height="200px" weight="200px" class="in-image">
+            </div>
+            <div class="div-details">
+                <div class="name">
+                    <label>Name: </label>
+                    <input [value]="name" type="text" formControlName="name" readonly>
+                </div>
+                <br>
+
+                <div class="dob">
+                    <label>DOB: </label>
+                    <input [value]="dob" type="date" formControlName="dob" readonly>
+                </div>
+                <!-- Parsed value is always of the form YYYY-MM-DD -->
+                <br>
+
+                <div class="weight">
+                    <label>Weight:: </label>
+                    <input [value]="weight" type="text" formControlName="hospital" readonly>
+                </div>
+                <br>
+
+                <div class="height">
+                    <label>Height: </label>
+                    <input [value]="height" type="text" formControlName="speciality" readonly>
+                </div>
+                <br>
+
+                <div class="address">
+                    <label>Address: </label>
+                    <input [value]="address" type="text" formControlName="address" readonly>
+                </div>
+                <br>
+
+                <div class="phone-number">
+                    <label>Phone Number: </label>
+                    <input [value]="phoneNumber" type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" formControlName="phone_number" readonly>
+                </div>
+                <br>
+
+                <button type="button" (click)="edit()" id="edit">Edit</button>
+            </div>
+        </div>
+    </div>
+</body>
