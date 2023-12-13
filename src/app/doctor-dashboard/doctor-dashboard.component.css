@@ -96,4 +96,17 @@
   .options{
     padding-top: 120px;
   }
-  
+
+  .viz_details{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #graph_year_label{
+    margin-right: 20px;
+  }
+
+  button{
+    margin-left: 20px;
+  }
