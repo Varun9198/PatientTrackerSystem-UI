@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from "@angular/router";
 import { FormGroup, FormBuilder, ReactiveFormsModule, Validators } from "@angular/forms";
+import {PasswordChangeService} from "../services/password-change.service";
 
 @Component({
   standalone: true,
@@ -22,20 +23,41 @@ export class ForgotPassComponent {
   });
 
 
-  constructor(private fb: FormBuilder, private router: Router) {}
+  constructor(private fb: FormBuilder, private router: Router, private passwordService: PasswordChangeService) {}
 
   get_otp(){
     let radio_element = document.getElementsByName("action")
-    let username = 'doctor';
+    let userType = 'doctor';
     for (let i =0; i<radio_element.length; i++){
       if ((<HTMLInputElement>radio_element[i]).checked){
-        
-        username = (<HTMLInputElement>radio_element[i]).value;
+        userType = (<HTMLInputElement>radio_element[i]).value;
       }
     }
+
+    let userName:string = this.form_otp.value.username
+    this.passwordService.get_otp(userType + ":" + userName).subscribe(
+      (response) => {
+        if (response.msg == "Success!") {
+          alert("OTP generated.")
+        }
+      },
+      (err) => {
+        console.log("err is: ", err)
+      }
+    )
   }
 
   redirect(){
+
+    let radio_element = document.getElementsByName("action")
+    let userType = 'doctor';
+    for (let i =0; i<radio_element.length; i++){
+      if ((<HTMLInputElement>radio_element[i]).checked){
+        userType = (<HTMLInputElement>radio_element[i]).value;
+      }
+    }
+
+    let userName:string = this.form_otp.value.username
     let otp = this.form_password.value.OTP
     let password = this.form_password.value.password
     let confirm_pass = this.form_password.value.confirm_pass
@@ -43,7 +65,18 @@ export class ForgotPassComponent {
     {
       alert('Password not matching')
     }
-    alert('Password Successfully changed')
-    this.router.navigate([''])
+
+    this.passwordService.change_password(userType, userName, otp, password).subscribe(
+      (response) => {
+        if (response.msg == "Success!") {
+          alert('Password Successfully changed')
+          this.router.navigate([''])
+        }
+      },
+      (err) => {
+        console.log("err is: ", err)
+      }
+    )
+
   }
 }
