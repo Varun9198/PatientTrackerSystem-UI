@@ -76,11 +76,11 @@ export interface APPOINTMENTS{
 }
 
 export interface EDIT_DOCTOR{
-  doctor_id: Number;
+  doctorId: String;
   hospital: String;
   speciality: String;
   address: String;
-  phone_number: String;
+  phoneNumber: String;
 }
 
 export interface EDIT_PATIENT{

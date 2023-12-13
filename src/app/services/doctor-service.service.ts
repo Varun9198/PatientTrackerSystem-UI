@@ -41,7 +41,9 @@ export class DoctorServiceService {
     // });
   }
 
-  public edit_details(details: EDIT_DOCTOR){
-    return this.http.post('localhost:8080/doctors/edit', details)
+  public edit_details(details: EDIT_DOCTOR): Observable<BASE_RESPONSE>{
+    const bearerToken = localStorage.getItem("bearer_token") ?? '';
+    let headers = new HttpHeaders().set('Authorization', bearerToken);
+    return this.http.post<BASE_RESPONSE>('/doctors/edit', details, {headers})
   }
 }
