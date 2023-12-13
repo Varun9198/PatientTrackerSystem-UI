@@ -59,10 +59,10 @@ export interface PATIENTS{
   name: String;
   dob: String;
   sex: String;
-  height: Number;
-  weight: Number;
+  height: String;
+  weight: String;
   address: String;
-  phone_number: String;
+  phoneNumber: String;
   email: String;
 }
 
@@ -95,11 +95,11 @@ export interface EDIT_DOCTOR{
 }
 
 export interface EDIT_PATIENT{
-  patient_id: Number;
-  height: Number;
-  weight: Number;
+  patientId: String;
+  height: String;
+  weight: String;
   address: String;
-  phone_number: String;
+  phoneNumber: String;
 }
 
 export interface RESCHEDULE{
