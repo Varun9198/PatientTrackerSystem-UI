@@ -92,7 +92,7 @@ export interface EDIT_PATIENT{
 }
 
 export interface RESCHEDULE{
-  appointment_id: Number;
+  appointmentId: Number;
   newDate: String;
   newTime: String;
 }
