@@ -26,6 +26,17 @@ export interface DOCTOR_SIGNUP{
   password: String
 }
 
+export interface PATIENT_SIGNUP{
+  appendedEmail: String,
+  dob: String,
+  height: String,
+  weight: String,
+  address: String,
+  phoneNumber: String,
+  name: String,
+  password: String
+}
+
 export interface BASE_RESPONSE {
   status: String,
   msg: String,

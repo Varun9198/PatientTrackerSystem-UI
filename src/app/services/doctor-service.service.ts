@@ -28,17 +28,6 @@ export class DoctorServiceService {
 
   public signup_doctor(details: DOCTOR_SIGNUP): Observable<BASE_RESPONSE> {
     return this.http.post<BASE_RESPONSE>('/doctors/signup', details)
-    // // console.log(details)
-    // let options = {
-    //   headers: new HttpHeaders()
-    //   .set("Content-Type", "application/json")
-    // };
-    // let id: string
-    // this.http.post<any>('/doctors/signup', details, options)
-    // .subscribe(data => {
-    //   console.log(id);
-    //   return data
-    // });
   }
 
   public edit_details(details: EDIT_DOCTOR): Observable<BASE_RESPONSE>{
