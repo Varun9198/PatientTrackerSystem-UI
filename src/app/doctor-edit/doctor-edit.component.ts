@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import {DoctorServiceService} from "../services/doctor-service.service";
-import {EDIT_DOCTOR} from "../app.component";
+import {DOCTORS, EDIT_DOCTOR} from "../app.component";
 
 @Component({
   standalone: true,
@@ -31,6 +31,24 @@ export class DoctorEditComponent {
     });
   }
 
+  ngOnInit() {
+
+    const id = localStorage.getItem('user_id') ?? "-1"
+
+    this.doctorService.get_doctor_by_id(id).subscribe(
+      (response) => {
+
+        const doctor: DOCTORS = response.body;
+
+        this.form.patchValue({
+          address: doctor.address,
+          hospital: doctor.hospital,
+          speciality: doctor.speciality,
+          phone_number: doctor.phoneNumber
+        });
+      }
+    )
+  }
   submit(){
     const id = localStorage.getItem('user_id') ?? "-1"
     let hospital = this.form.value.hospital;
