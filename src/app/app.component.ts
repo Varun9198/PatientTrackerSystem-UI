@@ -56,11 +56,11 @@ export interface PATIENTS{
 }
 
 export interface CASES{
-  id: Number;
-  patient_id: Number;
-  doctor_id: Number;
-  open_date: String;
-  close_date: String;
+  caseId: Number;
+  patientId: Number;
+  doctorId: Number;
+  openDate: String;
+  closeDate: String;
   symptoms: String; 
   medicines: String; 
   cost: Number;
