@@ -6,14 +6,14 @@ import { CASES, APPOINTMENTS } from "../app.component";
 import { AppointmentServiceService } from '../services/appointment-service.service';
 import { CaseServiceService } from '../services/case-service.service';
 import { filter } from 'rxjs';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
 
 @Component({
   standalone: true,
   selector: 'app-doctor-dashboard',
   templateUrl: './doctor-dashboard.component.html',
   styleUrls: ['./doctor-dashboard.component.css'],
-  imports: [CommonModule]
+  imports: [CommonModule, ReactiveFormsModule]
 })
 
 
@@ -23,7 +23,7 @@ export class DoctorDashboardComponent implements OnInit {
   labels: String[] = [];
   data: Number[] = [];
   year: Number = 2021;
-  
+  MyChart: Chart<"line", Number[], String> | null = null;
 
   form: FormGroup = this.fb.group({
     year_id: ['', Validators.required]
@@ -36,7 +36,7 @@ export class DoctorDashboardComponent implements OnInit {
       history.pushState(null, '', location.href)
     });
   }
-  
+
   ngOnInit(){
 
     const id = localStorage.getItem('user_id') ?? "-1"
@@ -68,6 +68,7 @@ export class DoctorDashboardComponent implements OnInit {
   }
 
   visualize(){
+
     const id = localStorage.getItem('user_id') ?? "-1"
     this.year = this.form.value.year_id
     this.caseService.get_monthly_cases(id, this.year).subscribe(
@@ -77,7 +78,11 @@ export class DoctorDashboardComponent implements OnInit {
         this.data = Object.values(body)//this.labels.map(key => body.key)
         console.log('this: ', response, this.data, this.labels)
 
-        var MyChart = new Chart('MyChart', {
+        if(this.MyChart){
+          this.MyChart.clear();
+          this.MyChart.destroy();
+        }
+        this.MyChart = new Chart('MyChart', {
           type: 'line',
         data: {
           labels: this.labels,
@@ -95,12 +100,13 @@ export class DoctorDashboardComponent implements OnInit {
           }
         }
       });
-    
+
       },
       (err) => {
         console.log('error is: ', err)
       }
     )
+
   }
 
 

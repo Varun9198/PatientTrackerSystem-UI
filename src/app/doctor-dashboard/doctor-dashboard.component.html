@@ -7,16 +7,16 @@
             <h2> Dashboard </h2>
         </div>
         <div class="dashboard-logout">
-            <a  href="DoctorLogin">Log Out</a> 
-        </div> 
+            <a  href="DoctorLogin">Log Out</a>
+        </div>
     </div>
     <div class="column-split">
-        <div class="options"> 
+        <div class="options">
           <a href="DoctorLogin/Profile">Profile</a> <br>
           <a href="DoctorLogin/Dashboard">Dashboard</a><br>
           <a href="DoctorLogin/UpcomingAppointments">Upcoming Appointments</a><br>
-          <a href="DoctorLogin/CaseHistory">Case History</a><br> 
-          <a href="DoctorLogin/Reschedule">Reschedule Appointment</a><br> 
+          <a href="DoctorLogin/CaseHistory">Case History</a><br>
+          <a href="DoctorLogin/Reschedule">Reschedule Appointment</a><br>
           <a href="DoctorLogin/UpdateCase">Update Case</a><br>
         </div>
         <div class="appointment-cases">
@@ -77,12 +77,11 @@
             <pre></pre>
             <div>
               <h2><u>Visualization</u></h2>
-              <div class="viz_details">
+              <div class="viz_details" [formGroup]="form">
                 <label id="graph_year_label">Enter Year for Visualization: </label>
-                <select id="graph_year">
-                <option value="2021">2021</option>
-                <option value="2022">2022</option>
+                <select id="graph_year" formControlName = "year_id">
                 <option value="2023">2023</option>
+                <option value="2024">2024</option>
               </select>
               <button type="submit" (click)="visualize()">Visualize</button>
               </div>

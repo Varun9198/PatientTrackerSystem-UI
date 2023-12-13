@@ -117,7 +117,7 @@ export interface NEWCASE{
 }
 
 export interface UPDATE_CASE{
-  case_id: Number;
+  caseId: number;
   symptoms: String;
   medicines: String;
   cost: Number;

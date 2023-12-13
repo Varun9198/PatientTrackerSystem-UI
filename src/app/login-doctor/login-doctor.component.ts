@@ -22,10 +22,10 @@ export class LoginDoctorComponent implements OnInit {
       localStorage.clear()
   }
   constructor(private fb: FormBuilder, private router: Router, private doctorService: DoctorServiceService) {}
-  
+
   login(){
     let appendedUsername = 'doctor:' + this.form.value.username;
-    let password = this.form.value.password; 
+    let password = this.form.value.password;
     let userLogin: USER_LOGIN = {
       appendedUsername: appendedUsername,
       password: password
@@ -45,5 +45,9 @@ export class LoginDoctorComponent implements OnInit {
 
   signup(){
     this.router.navigate(['DoctorLogin/Signup'])
+  }
+
+  homepage(){
+    this.router.navigate([''])
   }
 }

@@ -24,12 +24,24 @@ export class CaseServiceService {
   public get_monthly_cases(doctor_id: String, year: Number): Observable<any>{
     const bearerToken = localStorage.getItem("bearer_token") ?? '';
     let headers = new HttpHeaders().set('Authorization', bearerToken);
-    return this.http.get<any>('/cases/monthly?doctorId='+doctor_id+'&year=2023', {headers})
+    return this.http.get<any>('/cases/monthly?doctorId='+doctor_id+'&year='+year, {headers})
   }
 
-  public update_case(details: UPDATE_CASE): Observable<any>{
-    return this.http.post<any>('localhost:8080/cases/update', details)
+  public close_case(case_id: string, doctor_id: string): Observable<BASE_RESPONSE> {
+    const bearerToken = localStorage.getItem("bearer_token") ?? '';
+    let hHeaders = new HttpHeaders().set('Authorization', bearerToken);
+    let hParams = new HttpParams();
+    hParams = hParams.append('caseId', case_id.toString());
+    hParams = hParams.append('doctorId', doctor_id.toString());
+    return this.http.post<BASE_RESPONSE>('/cases/close', hParams, {headers:hHeaders});
   }
+
+  public update_case(details: UPDATE_CASE): Observable<BASE_RESPONSE> {
+    const bearerToken = localStorage.getItem("bearer_token") ?? '';
+    let hHeaders = new HttpHeaders().set('Authorization', bearerToken);
+    return this.http.post<BASE_RESPONSE>('/cases/update', details, {headers:hHeaders});
+  }
+
 
   public get_cases_for_user(id: String, userType: String): Observable<BASE_RESPONSE> {
     let body = {'id': id, 'userType': userType}

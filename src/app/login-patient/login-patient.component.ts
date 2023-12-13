@@ -25,7 +25,7 @@ export class LoginPatientComponent implements OnInit{
 
   login(){
     let appendedUsername = 'patient:' + this.form.value.username;
-    let password = this.form.value.password; 
+    let password = this.form.value.password;
     let userLogin: USER_LOGIN = {
       appendedUsername: appendedUsername,
       password: password
@@ -45,5 +45,9 @@ export class LoginPatientComponent implements OnInit{
 
   signup(){
     this.router.navigate(['PatientLogin/Signup'])
+  }
+
+  homepage(){
+    this.router.navigate([''])
   }
 }

@@ -44,8 +44,8 @@ export class PatientEditComponent implements OnInit{
 
   submit(){
     const id = localStorage.getItem('user_id') ?? "-1"
-    let height = this.form.value.hospital;
-    let weight = this.form.value.speciality;
+    let height = this.form.value.height
+    let weight = this.form.value.weight;
     let address = this.form.value.address;
     let phone_number = this.form.value.phone_number;
 

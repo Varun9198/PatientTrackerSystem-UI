@@ -25,10 +25,10 @@ export class SignupPatientComponent {
   });
 
   constructor(private fb: FormBuilder, private router: Router, private patientService: PatientServiceService){}
-  
+
   signup(){
     let patientSignup: PATIENT_SIGNUP = {
-      appendedEmail: this.form.value.username,
+      appendedEmail: "patient:" + this.form.value.username,
       password: this.form.value.password,
       name: this.form.value.name,
       dob: this.form.value.dob,
