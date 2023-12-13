@@ -2,43 +2,43 @@
     <h3>Enter Doctor's Personal Details</h3> 
     
     <div class="username">
-        <input placeholder="abc@xyz.com" type="text" formControlName="username" value="ab">
+        <input placeholder="abc@xyz.com" type="text" formControlName="username">
     </div>
     <br>
     
     <div class="password">
-        <input placeholder="Password" type="password" formControlName="password" value="sf">
+        <input placeholder="Password" type="password" formControlName="password">
     </div>
     <br>
 
     <div class="name">
-        <input placeholder="Name" type="text" formControlName="name" value="df">
+        <input placeholder="Name" type="text" formControlName="name">
     </div>
     <br>
 
     <div class="dob">
-        <input placeholder="DOB" type="date" formControlName="dob" value="09-09-0990">
+        <input placeholder="DOB" type="date" formControlName="dob">
     </div> 
     <!-- Parsed value is always of the form YYYY-MM-DD -->
     <br>
     
     <div class="hospital">
-        <input placeholder="Hospital" type="text" formControlName="hospital" value="df">
+        <input placeholder="Hospital" type="text" formControlName="hospital">
     </div>
     <br>
 
     <div class="speciality">
-        <input placeholder="Speciality" type="text" formControlName="speciality" value="df"> 
+        <input placeholder="Speciality" type="text" formControlName="speciality"> 
     </div>
     <br>
     
     <div class="address">
-        <input placeholder="Address" type="text" formControlName="address" value="df"> 
+        <input placeholder="Address" type="text" formControlName="address"> 
     </div>
     <br>
     
     <div class="phone-number">
-        <input placeholder="123-456-7890" type="tel" pattern="[0-9]*" formControlName="phone_number" value="01"> 
+        <input placeholder="123-456-7890" type="tel" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" formControlName="phone_number"> 
     </div>
     <br>
 
@@ -47,6 +47,5 @@
     </div>
     <br> -->
 
-    <!-- <button type="button" (click)="signup()" [disabled]="!form.valid">Sign Up</button> -->
-    <button type="button" (click)="signup()">Sign Up</button>
+    <button type="button" (click)="signup()" [disabled]="!form.valid">Sign Up</button>
 </div>

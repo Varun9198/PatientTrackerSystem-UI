@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { DOCTORS, EDIT_DOCTOR, DOCTOR_SIGNUP } from "../app.component";
+import { DOCTORS, EDIT_DOCTOR, DOCTOR_SIGNUP, USER_LOGIN, BASE_RESPONSE } from "../app.component";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Observable } from 'rxjs';
 
@@ -20,18 +20,23 @@ export class DoctorServiceService {
     return this.http.get<DOCTORS>('localhost:8080/doctors/'+id)
   }
 
-  public signup_doctor(details: DOCTOR_SIGNUP){
-    // console.log(details)
-    let options = {
-      headers: new HttpHeaders()
-      .set("Content-Type", "application/json")
-    };
-    let id: string
-    this.http.post<any>('/doctors/signup', details, options)
-    .subscribe(data => {
-      id = data.body.id
-      console.log(id);
-    });
+  public login_doctor(details: USER_LOGIN): Observable<BASE_RESPONSE> {
+    return this.http.post<BASE_RESPONSE>('/doctors/login', details)
+  }
+
+  public signup_doctor(details: DOCTOR_SIGNUP): Observable<BASE_RESPONSE> {
+    return this.http.post<BASE_RESPONSE>('/doctors/signup', details)
+    // // console.log(details)
+    // let options = {
+    //   headers: new HttpHeaders()
+    //   .set("Content-Type", "application/json")
+    // };
+    // let id: string
+    // this.http.post<any>('/doctors/signup', details, options)
+    // .subscribe(data => {
+    //   console.log(id);
+    //   return data
+    // });
   }
 
   public edit_details(details: EDIT_DOCTOR){

@@ -10,6 +10,11 @@ export class AppComponent {
   title = 'PatientTrackerSystem-UI';
 }
 
+export interface USER_LOGIN {
+  appendedUsername: String,
+  password: String
+}
+
 export interface DOCTOR_SIGNUP{
   appendedEmail: String,
   dob: String, 
@@ -19,6 +24,12 @@ export interface DOCTOR_SIGNUP{
   phoneNumber: String,
   name: String,
   password: String
+}
+
+export interface BASE_RESPONSE {
+  status: String,
+  msg: String,
+  body: any
 }
 
 export interface DOCTORS{
@@ -56,10 +67,10 @@ export interface CASES{
 }
 
 export interface APPOINTMENTS{
-  appointment_id: Number;
-  case_id: Number;
-  patient_id: Number;
-  doctor_id: Number;
+  appointmentId: Number;
+  caseId: Number;
+  patientId: Number;
+  doctorId: Number;
   date: String;
   time: String;
 }

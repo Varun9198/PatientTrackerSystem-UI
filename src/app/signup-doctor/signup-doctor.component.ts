@@ -39,8 +39,15 @@ export class SignupDoctorComponent {
       phoneNumber: this.form.value.phone_number
     };
 
-    console.log(this.doctorService.signup_doctor(doctorSignup))
-    alert('Account Created');
-    this.router.navigateByUrl('DoctorLogin')
+    this.doctorService.signup_doctor(doctorSignup).subscribe(
+      (response) => {
+        console.log(response)
+        alert('Account Created');
+        this.router.navigateByUrl('DoctorLogin')
+      },
+      (err) => {
+        alert("Incorrect details entered.")
+      }
+    )
   }
 }
