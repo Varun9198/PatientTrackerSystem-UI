@@ -22,10 +22,10 @@
 
         <div class="appointment-cases">
           <div class="div-table">
-            <table class="table">
+            <table class="table" *ngIf="ShowCases">
                 <thead>
                   <tr>
-                    <th>Id</th>
+                    <th>Case Id</th>
                     <th>Patient ID</th>
                     <th>Doctor ID</th>
                     <th>Open Date</th>
@@ -50,7 +50,9 @@
               </table>
               </div>
               <div class="enter_id" [formGroup]="form">
-                <input type="number" placeholder="Case ID" id="appointment_details" formControlName="case_id">
+                <label *ngIf="ShowCases">Case Id: </label>
+                <input *ngIf="ShowCases" type="number" placeholder="Case ID" id="appointment_details" formControlName="case_id">
+                <label>Time:</label>
                 <select id='appointment_details' formControlName="time">
                     <option value="09:00">09:00</option>
                     <option value="09:30">09:30</option>
@@ -70,9 +72,11 @@
                     <option value="16:30">16:30</option>
                     <option value="17:00">17:00</option>
                 </select>
+                <label>Date:</label>
                 <input id='appointment_details' type="date" formControlName="date">
               </div>
-              <button type="button" [disabled]="!form.valid" (click)="book()">Book Appointment</button>
+              <button *ngIf="ShowCases" type="button" [disabled]="!form.valid" (click)="bookCaseAndAppointment()">New Case</button>
+              <button type="button" [disabled]="!form.valid" (click)="bookAppointment()">Book Appointment</button>
         </div>
     </div>
 </body>

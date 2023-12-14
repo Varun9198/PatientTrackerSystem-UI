@@ -17,8 +17,10 @@ export class CaseServiceService {
   //   return this.http.get<any>('localhost:8080/cases/user-cases', {params: params})
   // }
 
-  public open_patient_doctor_cases(patient_id: Number, doctor_id: Number): Observable<any>{
-    return this.http.get<any>('localhost:8080/cases/open-cases?patientId='+patient_id+'&doctorId='+doctor_id)
+  public open_patient_doctor_cases(patient_id: String, doctor_id: String): Observable<any>{
+    const bearerToken = localStorage.getItem("bearer_token") ?? '';
+    let hHeaders = new HttpHeaders().set('Authorization', bearerToken);
+    return this.http.get<any>('/cases/open-cases?patientId='+patient_id+'&doctorId='+doctor_id, {headers:hHeaders})
   }
 
   public get_monthly_cases(doctor_id: String, year: Number): Observable<any>{
@@ -48,5 +50,14 @@ export class CaseServiceService {
     const bearerToken = localStorage.getItem("bearer_token") ?? '';
     let headers = new HttpHeaders().set('Authorization', bearerToken);
     return this.http.post<BASE_RESPONSE>('/cases/user-cases', body, { headers })
+  }
+
+  public create_case(patient_id: String, doctor_id: String,
+                     date: String, time: String): Observable<BASE_RESPONSE> {
+    let body = {'patientId': patient_id, 'doctorId': doctor_id,
+    'date': date, 'time': time}
+    const bearerToken = localStorage.getItem("bearer_token") ?? '';
+    let headers = new HttpHeaders().set('Authorization', bearerToken);
+    return this.http.post<BASE_RESPONSE>('/cases/create', body, { headers })
   }
 }

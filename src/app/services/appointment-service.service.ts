@@ -31,7 +31,9 @@ export class AppointmentServiceService {
     return this.http.post<BASE_RESPONSE>('/appointments/reschedule', details, {headers})
   }
 
-  public new_appointment(details:NEWCASE): Observable<any>{
-    return this.http.post<any>('localhost:8080/appointments/create-in-open-case', details)
+  public new_appointment(details:NEWCASE): Observable<BASE_RESPONSE>{
+    const bearerToken = localStorage.getItem("bearer_token") ?? '';
+    let headers = new HttpHeaders().set('Authorization', bearerToken);
+    return this.http.post<BASE_RESPONSE>('/appointments/create-in-open-case', details, {headers})
   }
 }

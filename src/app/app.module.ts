@@ -11,6 +11,7 @@ import { CaseServiceService } from './services/case-service.service';
 import { AppointmentServiceService } from './services/appointment-service.service';
 import { PasswordChangeService } from './services/password-change.service';
 import { HttpClientModule } from '@angular/common/http';
+import {SearchServiceService} from "./services/search-service.service";
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { HttpClientModule } from '@angular/common/http';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [PatientServiceService, DoctorServiceService, CaseServiceService, AppointmentServiceService, PasswordChangeService],
+  providers: [PatientServiceService, DoctorServiceService, CaseServiceService,
+    SearchServiceService, PasswordChangeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

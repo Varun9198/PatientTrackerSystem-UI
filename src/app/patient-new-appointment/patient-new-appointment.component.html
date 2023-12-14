@@ -21,10 +21,10 @@
       </div>
 
         <div class="appointment-cases">
-          <div class="filter_div" [formGroup]="form2">
-          <input type="text" placeholder="Speciality" id="filters" formControlName="speciality">
-          <input type="text" placeholder="Location" id="filters" formControlName="location">
-          <input type="text" placeholder="Name" id="filters" formControlName="name">
+          <div class="filter_div" [formGroup]="form">
+            <input type="text" placeholder="Name" id="filters" formControlName="name">
+            <input type="text" placeholder="Speciality" id="filters" formControlName="speciality">
+            <input type="text" placeholder="Location" id="filters" formControlName="location">
           </div>
           <button type="button" (click)="filter()">Filter</button>
           <div class="div-table">
@@ -37,28 +37,28 @@
                       <th>Hospital</th>
                       <th>Speciality</th>
                       <th>Address</th>
-                      <th>Phone Number</th>
-                      <th>Email</th>
+<!--                      <th>Phone Number</th>-->
+<!--                      <th>Email</th>-->
                     </tr>
                 </thead>
                 <tbody>
-                  <tr *ngFor="let user of Cases">
-                    <td>{{ user.id }}</td>
+                  <tr *ngFor="let user of Doctors">
+                    <td>{{ user.doctorId }}</td>
                     <td>{{ user.name }}</td>
                     <td>{{ user.dob }}</td>
                     <td>{{ user.hospital }}</td>
                     <td>{{ user.speciality }}</td>
                     <td>{{ user.address }}</td>
-                    <td>{{ user.phoneNumber }}</td>
-                    <td>{{ user.email }}</td>
+<!--                    <td>{{ user.phoneNumber }}</td>-->
+<!--                    <td>{{ user.email }}</td>-->
                   </tr>
                 </tbody>
               </table>
               </div>
-              <div class="enter_id" [formGroup]="form">
+              <div class="enter_id" [formGroup]="form1">
                 <input type="number" placeholder="Doctor ID" id="select_doctor" formControlName="doctor_id">
               </div>
-              <button type="button" (click)="select_doctor()" [disabled]="!form.valid">Submit</button>
+              <button type="button" (click)="select_doctor()" [disabled]="!form1.valid">Submit</button>
         </div>
     </div>
 </body>

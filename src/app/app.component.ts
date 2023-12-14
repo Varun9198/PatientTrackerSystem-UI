@@ -44,7 +44,7 @@ export interface BASE_RESPONSE {
 }
 
 export interface DOCTORS{
-  id: Number;
+  doctorId: Number;
   name: String;
   dob: String;
   hospital: String;
@@ -55,7 +55,7 @@ export interface DOCTORS{
 }
 
 export interface PATIENTS{
-  id: Number;
+  patientId: Number;
   name: String;
   dob: String;
   sex: String;
@@ -109,9 +109,9 @@ export interface RESCHEDULE{
 }
 
 export interface NEWCASE{
-  case_id: Number;
-  patient_id: Number;
-  doctor_id: Number;
+  caseId: String;
+  patientId: String;
+  doctorId: String;
   date: String;
   time: String;
 }
