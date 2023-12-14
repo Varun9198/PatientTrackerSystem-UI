@@ -1,0 +1,50 @@
+<body>
+    <div class="header">
+        <div class="dashboard-img">
+            <img id ="dash-img" src="../../assets/images/doctor-dashboard-icon.png">
+        </div>
+        <div class = "dashboard-heading">
+            <h2> Upcoming Appointments </h2>
+        </div>
+        <div class="dashboard-logout">
+            <a  href="DoctorLogin">Log Out</a>
+        </div>
+    </div>
+    <div class="column-split">
+        <div class="options">
+            <a href="DoctorLogin/Profile">Profile</a> <br>
+            <a href="DoctorLogin/Dashboard">Dashboard</a><br>
+            <a href="DoctorLogin/UpcomingAppointments">Upcoming Appointments</a><br>
+            <a href="DoctorLogin/CaseHistory">Case History</a><br>
+            <a href="DoctorLogin/Reschedule">Reschedule Appointment</a><br>
+            <a href="DoctorLogin/UpdateCase">Update Case</a><br>
+        </div>
+
+        <div class="appointment-cases">
+            <div class="div-table">
+            <table class="table">
+                <thead>
+                    <tr>
+                      <th>Appointment ID</th>
+                      <th>Case ID</th>
+                      <th>Patient ID</th>
+                      <th>Doctor ID</th>
+                      <th>Date</th>
+                      <th>Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let user of Appointments">
+                    <td>{{ user.appointmentId }}</td>
+                    <td>{{ user.caseId }}</td>
+                    <td>{{ user.patientId }}</td>
+                    <td>{{ user.doctorId }}</td>
+                    <td>{{ user.date }}</td>
+                    <td>{{ user.time }}</td>
+                  </tr>
+                </tbody>
+              </table>
+              </div>
+        </div>
+    </div>
+</body>

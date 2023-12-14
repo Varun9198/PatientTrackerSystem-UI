@@ -1,0 +1,76 @@
+<body>
+    <div class="header">
+        <div class="dashboard-img">
+            <img id ="dash-img" src="../../assets/images/doctor-dashboard-icon.png">
+        </div>
+        <div class = "dashboard-heading">
+            <h2> Reschedule Appointment </h2>
+        </div>
+        <div class="dashboard-logout">
+            <a  href="DoctorLogin">Log Out</a>
+        </div>
+    </div>
+    <div class="column-split">
+        <div class="options">
+            <a href="DoctorLogin/Profile">Profile</a> <br>
+            <a href="DoctorLogin/Dashboard">Dashboard</a><br>
+            <a href="DoctorLogin/UpcomingAppointments">Upcoming Appointments</a><br>
+            <a href="DoctorLogin/CaseHistory">Case History</a><br>
+            <a href="DoctorLogin/Reschedule">Reschedule Appointment</a><br>
+            <a href="DoctorLogin/UpdateCase">Update Case</a><br>
+        </div>
+        <div class="right-frame">
+        <div class="appointment-cases">
+            <div class="div-table">
+            <table class="table">
+                <thead>
+                    <tr>
+                      <th>Appointment ID</th>
+                      <th>Case ID</th>
+                      <th>Patient ID</th>
+                      <th>Doctor ID</th>
+                      <th>Date</th>
+                      <th>Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let user of Appointments">
+                    <td>{{ user.appointmentId }}</td>
+                    <td>{{ user.caseId }}</td>
+                    <td>{{ user.patientId }}</td>
+                    <td>{{ user.doctorId }}</td>
+                    <td>{{ user.date }}</td>
+                    <td>{{ user.time }}</td>
+                  </tr>
+                </tbody>
+              </table>
+              </div>
+            <pre></pre>
+        </div>
+        <div class="select-appointment" [formGroup]="form">
+            <input id='form-input' type="number" formControlName="appointment_number" placeholder="Enter Appointment ID" style="text-align: center;"><br>
+            <select id='form-input' formControlName="new_time">
+                <option value="09:00">09:00</option>
+                <option value="09:30">09:30</option>
+                <option value="10:00">10:00</option>
+                <option value="10:30">10:30</option>
+                <option value="11:00">11:00</option>
+                <option value="11:30">11:30</option>
+                <option value="12:00">12:00</option>
+                <option value="12:30">12:30</option>
+                <option value="13:00">13:00</option>
+                <option value="13:30">13:30</option>
+                <option value="14:00">14:00</option>
+                <option value="14:30">14:30</option>
+                <option value="15:00">15:00</option>
+                <option value="15:30">15:30</option>
+                <option value="16:00">16:00</option>
+                <option value="16:30">16:30</option>
+                <option value="17:00">17:00</option>
+            </select>
+            <input id='form-input' type="date" formControlName="new_date"><br>
+        </div>
+        <button type="button" (click)="reschedule()" [disabled]="!form.valid">Reschedule</button><br>
+    </div>
+    </div>
+</body>

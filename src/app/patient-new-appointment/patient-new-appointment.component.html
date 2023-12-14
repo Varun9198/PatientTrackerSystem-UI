@@ -1,0 +1,64 @@
+<body>
+    <div class="header">
+        <div class="dashboard-img">
+            <img id ="dash-img" src="../../assets/images/patient-dashboard.png">
+        </div>
+        <div class = "dashboard-heading">
+            <h2> Book New Appointment </h2>
+        </div>
+      <div class="dashboard-logout">
+        <a  href="PatientLogin">Log Out</a>
+      </div>
+    </div>
+    <div class="column-split">
+      <div class="options">
+        <a href="PatientLogin/Profile">Profile</a> <br>
+        <a href="PatientLogin/Dashboard">Dashboard</a><br>
+        <a href="PatientLogin/UpcomingAppointments">Upcoming Appointments</a><br>
+        <a href="PatientLogin/CaseHistory">Case History</a><br>
+        <a href="PatientLogin/Reschedule">Reschedule Appointment</a><br>
+        <a href="PatientLogin/NewAppointment">Book New Appointment</a><br>
+      </div>
+
+        <div class="appointment-cases">
+          <div class="filter_div" [formGroup]="form">
+            <input type="text" placeholder="Name" id="filters" formControlName="name">
+            <input type="text" placeholder="Speciality" id="filters" formControlName="speciality">
+            <input type="text" placeholder="Location" id="filters" formControlName="location">
+          </div>
+          <button type="button" (click)="filter()">Filter</button>
+          <div class="div-table">
+            <table class="table">
+                <thead>
+                    <tr>
+                      <th>Doctor ID</th>
+                      <th>Name</th>
+                      <th>DOB</th>
+                      <th>Hospital</th>
+                      <th>Speciality</th>
+                      <th>Address</th>
+<!--                      <th>Phone Number</th>-->
+<!--                      <th>Email</th>-->
+                    </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let user of Doctors">
+                    <td>{{ user.doctorId }}</td>
+                    <td>{{ user.name }}</td>
+                    <td>{{ user.dob }}</td>
+                    <td>{{ user.hospital }}</td>
+                    <td>{{ user.speciality }}</td>
+                    <td>{{ user.address }}</td>
+<!--                    <td>{{ user.phoneNumber }}</td>-->
+<!--                    <td>{{ user.email }}</td>-->
+                  </tr>
+                </tbody>
+              </table>
+              </div>
+              <div class="enter_id" [formGroup]="form1">
+                <input type="number" placeholder="Doctor ID" id="select_doctor" formControlName="doctor_id">
+              </div>
+              <button type="button" (click)="select_doctor()" [disabled]="!form1.valid">Submit</button>
+        </div>
+    </div>
+</body>

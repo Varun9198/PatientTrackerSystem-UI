@@ -1,0 +1,18 @@
+<body>
+<div [formGroup]="form_otp">
+    <input type="text" name="username" placeholder="Enter Username" formControlName="username"> <br>
+    <div>
+        <label for="doctor">Doctor</label>
+        <input type="radio" name="action" id="action" value="doctor" checked>
+        <label for="patient">Patient</label>
+        <input type="radio" name="action" id="action" value="patient">
+    </div>
+    <button type="button" (click)="get_otp()" [disabled]="!form_otp.valid">Send OTP</button><br>
+</div>
+<div [formGroup]="form_password">
+    <input type="text" name="OTP" placeholder="Enter OTP" formControlName="OTP"><br>
+    <input type="password" name="password" placeholder="Enter new password" formControlName="password"> <br>
+    <input type="password" name="confirm_pass" placeholder="Enter new password again" formControlName="confirm_pass"> <br>
+</div>
+<button type="button" (click)="redirect()" [disabled]="!form_password.valid">Change Password</button>
+</body>

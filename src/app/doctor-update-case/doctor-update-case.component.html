@@ -1,0 +1,66 @@
+<body>
+    <div class="header">
+        <div class="dashboard-img">
+            <img id ="dash-img" src="../../assets/images/doctor-dashboard-icon.png">
+        </div>
+        <div class = "dashboard-heading">
+            <h2> Update Case </h2>
+        </div>
+        <div class="dashboard-logout">
+            <a  href="DoctorLogin">Log Out</a>
+        </div>
+    </div>
+    <div class="column-split">
+        <div class="options">
+            <a href="DoctorLogin/Profile">Profile</a> <br>
+            <a href="DoctorLogin/Dashboard">Dashboard</a><br>
+            <a href="DoctorLogin/UpcomingAppointments">Upcoming Appointments</a><br>
+            <a href="DoctorLogin/CaseHistory">Case History</a><br>
+            <a href="DoctorLogin/Reschedule">Reschedule Appointment</a><br>
+            <a href="DoctorLogin/UpdateCase">Update Case</a><br>
+        </div>
+        <div class="right-frame">
+        <div class="appointment-cases">
+            <div class="div-table">
+            <table class="table">
+                <thead>
+                    <tr>
+                      <th>Case ID</th>
+                      <th>Patient ID</th>
+                      <th>Doctor ID</th>
+                      <th>Open Date</th>
+                      <th>Close Date</th>
+                      <th>Symptoms</th>
+                      <th>Medicines</th>
+                      <th>Cost</th>
+                    </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let user of Cases">
+                    <td>{{ user.caseId }}</td>
+                    <td>{{ user.patientId }}</td>
+                    <td>{{ user.doctorId }}</td>
+                    <td>{{ user.openDate }}</td>
+                    <td>{{ user.closeDate }}</td>
+                    <td>{{ user.symptoms }}</td>
+                    <td>{{ user.medicines }}</td>
+                    <td>{{ user.cost }}</td>
+                  </tr>
+                </tbody>
+              </table>
+              </div>
+            <pre></pre>
+        </div>
+        <div class="case_id" [formGroup]="form_id">
+            <input id="enter-id" type="number" placeholder="Enter Case ID"  formControlName="case_id"><br>
+        </div>
+        <div class="select-appointment" [formGroup]="form">
+            <input id="appointment-form" type="text" placeholder="Update Symptoms"  formControlName="symptoms"><br>
+            <input id="appointment-form" type="text" placeholder="Update Medicines"  formControlName="medicines"><br>
+            <input id="appointment-form" type="text" placeholder="Update Cost"  formControlName="cost"><br>
+        </div>
+        <button type="button" (click)="edit()" [disabled]="!form.valid || !form_id.valid">Edit Case</button><br>
+        <button type="button" (click)="closeCase()" [disabled]="!form_id.valid">Close Case</button>
+    </div>
+    </div>
+</body>

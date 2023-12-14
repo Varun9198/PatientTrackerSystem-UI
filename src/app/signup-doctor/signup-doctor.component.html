@@ -1,0 +1,51 @@
+<div [formGroup]="form">
+    <h3>Enter Doctor's Personal Details</h3> 
+    
+    <div class="username">
+        <input placeholder="abc@xyz.com" type="text" formControlName="username">
+    </div>
+    <br>
+    
+    <div class="password">
+        <input placeholder="Password" type="password" formControlName="password">
+    </div>
+    <br>
+
+    <div class="name">
+        <input placeholder="Name" type="text" formControlName="name">
+    </div>
+    <br>
+
+    <div class="dob">
+        <input placeholder="DOB" type="date" formControlName="dob">
+    </div> 
+    <!-- Parsed value is always of the form YYYY-MM-DD -->
+    <br>
+    
+    <div class="hospital">
+        <input placeholder="Hospital" type="text" formControlName="hospital">
+    </div>
+    <br>
+
+    <div class="speciality">
+        <input placeholder="Speciality" type="text" formControlName="speciality"> 
+    </div>
+    <br>
+    
+    <div class="address">
+        <input placeholder="Address" type="text" formControlName="address"> 
+    </div>
+    <br>
+    
+    <div class="phone-number">
+        <input placeholder="1234567890" type="tel" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" formControlName="phone_number"> 
+    </div>
+    <br>
+
+    <!-- <div class="email">
+        <input placeholder="abc@xyz.com" type="email" formControlName="email"> 
+    </div>
+    <br> -->
+
+    <button type="button" (click)="signup()" [disabled]="!form.valid">Sign Up</button>
+</div>

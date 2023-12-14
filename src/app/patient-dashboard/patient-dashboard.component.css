@@ -1,0 +1,99 @@
+  body {
+    height: 100vh;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .header {
+    display: flex;
+    align-items: center;
+    height: 10vh;
+    background-color: darkblue;
+    color: #fff;
+    padding: 0 20px;
+  }
+  
+  .dashboard-img {
+    width: 50px;
+  }
+  
+  #dash-img {
+    height: 30px;
+  }
+  
+  .dashboard-heading {
+    flex-grow: 1;
+    text-align: center;
+    margin: 0;
+  }
+  
+  .dashboard-logout {
+    text-align: right;
+  }
+  
+  .column-split {
+    height: 90vh;
+    display: flex;
+  }
+  
+  .options {
+    width: 20%;
+    padding: 20px;
+    background-color: #ecf0f1;
+  }
+
+  .options a {
+    display: block;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .appointment-cases {
+    width: 80%;
+    padding: 20px;
+    overflow: auto;
+  }
+  
+  .div-table{
+    margin-bottom: 50px;
+    max-height: 200px;
+    overflow: auto;
+  }
+
+  .table {
+    width: 100%;
+  }
+
+  table, th, td {
+    border: 1px solid #ddd;
+    border-collapse: collapse;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: darkblue;
+    color: #fff;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  tr:hover {
+    background-color: #e0e0e0;
+  }
+
+  a{
+    text-decoration: none;
+    color: #fff;
+  }
+
+  h2{
+    text-align: center;
+  }
+
+  .options{
+    padding-top: 120px;
+  }
+  
