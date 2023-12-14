@@ -25,7 +25,7 @@
             <table class="table" *ngIf="ShowCases">
                 <thead>
                   <tr>
-                    <th>Case Id</th>
+                    <th>Case ID</th>
                     <th>Patient ID</th>
                     <th>Doctor ID</th>
                     <th>Open Date</th>
@@ -50,9 +50,9 @@
               </table>
               </div>
               <div class="enter_id" [formGroup]="form">
-                <label *ngIf="ShowCases">Case Id: </label>
-                <input *ngIf="ShowCases" type="number" placeholder="Case ID" id="appointment_details" formControlName="case_id">
-                <label>Time:</label>
+                <label *ngIf="ShowCases" style="margin-right: 10px; padding-bottom: 5px;">Case Id: </label>
+                <input *ngIf="ShowCases" type="number" placeholder="Case ID" id="appointment_details" formControlName="case_id" style="text-align: center;">
+                <label style="margin-right: 10px; padding-bottom: 5px;">Time:</label>
                 <select id='appointment_details' formControlName="time">
                     <option value="09:00">09:00</option>
                     <option value="09:30">09:30</option>
@@ -72,11 +72,12 @@
                     <option value="16:30">16:30</option>
                     <option value="17:00">17:00</option>
                 </select>
-                <label>Date:</label>
+                <label style="margin-right: 10px; padding-bottom: 5px;">Date:</label>
                 <input id='appointment_details' type="date" formControlName="date">
               </div>
-              <button *ngIf="ShowCases" type="button" [disabled]="!form.valid" (click)="bookCaseAndAppointment()">New Case</button>
-              <button type="button" [disabled]="!form.valid" (click)="bookAppointment()">Book Appointment</button>
+              <button class="book-case" *ngIf="ShowCases" type="button" [disabled]="!form.valid" (click)="bookCaseAndAppointment()">New Case</button>
+              <pre></pre>
+              <button class="book-app" type="button" [disabled]="!form.valid" (click)="bookAppointment()">Book Appointment</button>
         </div>
     </div>
 </body>
